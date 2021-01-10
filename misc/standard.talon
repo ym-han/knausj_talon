@@ -14,14 +14,18 @@ zoom in: edit.zoom_in()
 zoom out: edit.zoom_out()
 (page | scroll) up: key(pgup)
 (page | scroll) down: key(pgdown)
-copy that: edit.copy()
-cut that: edit.cut()
-paste that: edit.paste()
-undo that: edit.undo()
+copy: edit.copy()
+cut it: edit.cut()
+paste it: edit.paste()
+
+undo: edit.undo()
 redo that: edit.redo()
 paste match: edit.paste_match_style()
-file save: edit.save()
-wipe: key(backspace)    
+save it: edit.save()
+
+junk: key(backspace)    
+# might switch back to 'wipe' tho
+
 (pad | padding): 
 	insert("  ") 
 	key(left)
