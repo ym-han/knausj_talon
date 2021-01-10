@@ -264,3 +264,13 @@ cut right:
     key(delete)
 
 
+copy left: 
+    edit.extend_line_start()
+    edit.copy()
+    key(right)
+
+copy right:
+    edit.extend_line_end()
+    edit.copy()
+    key(left)
+
