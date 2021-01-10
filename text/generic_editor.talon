@@ -11,12 +11,12 @@ go word right:
     edit.word_right()
 
 ^<number> before$:
-  edit.word_left()
-  repeat(number - 1)
+    edit.word_left()
+    repeat(number - 1)
 
 ^<number> after$:
     edit.word_right()
-  repeat(number - 1)
+    repeat(number - 1)
 
 
 left:
@@ -79,22 +79,24 @@ select down:
 ============
 # select previous word (imptly different from 'extend previous' in that this wouldn't select the intervening stuff)
 select previous:
-  user.edit_select_previous_word()
+    edit.word_left()
+    key(right)
+    edit.select_word()
 
 select next:
-  user.edit_select_next_word()
+    edit.word_right()
+    key(left)
+    edit.select_word()
 
 
 # extend selection __to__ previous / next word
 ^<number> befores:
-  edit.extend_word_left()
-  repeat(number - 1)
+    edit.extend_word_left()
+    repeat(number - 1)
 
 ^<number> afters:
-  edit.extend_word_right()
-  repeat(number - 1)
-
-
+    edit.extend_word_right()
+    repeat(number - 1)
 
 select word:
     edit.select_word()
@@ -151,17 +153,23 @@ clear down:
 clear word:
     edit.delete_word()
 
-
-
 junk previous:
-    user.edit_select_previous_word()
+    edit.word_left()
+    key(right)
+    edit.select_word()
     edit.delete()
 
-clear word left:
+junk next:
+    edit.word_right()
+    key(left)
+    edit.select_word()
+    edit.delete()
+
+snip till previous:
     edit.extend_word_left()
     edit.delete()
 
-clear word right:
+snip till next:
     edit.extend_word_right()
     edit.delete()
 
