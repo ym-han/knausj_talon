@@ -14,6 +14,12 @@ class edit_actions:
             return s.get()
         except clip.NoChange:
             return ""
+    
+    def select_next_word():
+        """Select next word"""
+ 
+    def select_previous_word():
+        """Select previous word"""
 
 
 @mod.action_class
