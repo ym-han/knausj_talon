@@ -84,7 +84,7 @@ gups here:
 
 
 # TO DO: check if there's any real difference between gaze and gaze here
-gaze: user.mouse_gaze_scroll()
+eye gaze: user.mouse_gaze_scroll()
 gaze here:
     user.mouse_move_center_active_window()
     user.mouse_gaze_scroll()
