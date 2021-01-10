@@ -237,7 +237,7 @@ cut everything:
 #     edit.select_all()
 #     edit.cut()
 
-cut it:
+cut word:
     edit.select_word()
     edit.cut()
 
@@ -252,8 +252,6 @@ cut word right:
 cut line:
     edit.select_line()
     edit.cut()
-
-
 
 cut left: 
     edit.extend_line_start()
