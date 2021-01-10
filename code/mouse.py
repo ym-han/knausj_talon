@@ -92,14 +92,16 @@ def gui_wheel(gui: imgui.GUI):
         actions.user.mouse_scroll_stop()
 
 
-def mouse_scroll_continuous(direction: str):
+def mouse_scroll_continuous(direction: str, factor: float):
     """Returns closure for either scrolling up or down"""
-    signed_Δ = setting_mouse_continuous_scroll_amount.get() * (1 if direction == "down" else -1)
+
+    abs_Δ = setting_mouse_continuous_scroll_amount.get() * factor
+    signed_Δ = abs_Δ * (1 if direction == "down" else -1)
 
     def inner():
         """Inner function to be returned"""
         global continuous_scoll_mode
-        continuous_scoll_mode = f"scroll {direction} continuous"
+        continuous_scoll_mode = f"scroll {direction} continuous; {factor}x"
         mouse_scroll(signed_Δ)()
 
         if scroll_job is None:
@@ -199,9 +201,9 @@ class Actions:
 
     #     return inner
 
-    def mouse_scroll_down_continuous():
+    def mouse_scroll_down_continuous(factor: float = 1.0):
         """Scrolls down continuously"""
-        mouse_scroll_continuous("down")()
+        mouse_scroll_continuous("down", factor)()
 
     # def mouse_scroll_down_continuous():
     #     """Scrolls down continuously"""
@@ -219,9 +221,9 @@ class Actions:
         """Scrolls up"""
         mouse_scroll(-setting_mouse_wheel_down_amount.get())()
 
-    def mouse_scroll_up_continuous():
+    def mouse_scroll_up_continuous(factor: float = 1.0):
         """Scrolls up continuously"""
-        mouse_scroll_continuous("up")()
+        mouse_scroll_continuous("up", factor)()
 
     def mouse_scroll_stop():
         """Stops scrolling"""

@@ -65,7 +65,8 @@ tiny down here:
     mouse_scroll(20)
 
 downs: user.mouse_scroll_down_continuous()
-downs here:
+downslow: user.mouse_scroll_down_continuous(0.45)
+downs here:	
     user.mouse_move_center_active_window()
     user.mouse_scroll_down_continuous()
 
@@ -78,6 +79,7 @@ tiny up here:
     mouse_scroll(-20)
 
 gups: user.mouse_scroll_up_continuous()
+gupslow: user.mouse_scroll_up_continuous(0.45)
 gups here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_up_continuous()
