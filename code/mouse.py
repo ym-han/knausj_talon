@@ -1,6 +1,7 @@
 import os
 import pathlib
 import subprocess
+import typing
 
 from talon import Context, Module, actions, app, cron, ctrl, imgui, noise, settings, ui
 from talon_plugins import eye_mouse, eye_zoom_mouse, speech
@@ -91,6 +92,24 @@ def gui_wheel(gui: imgui.GUI):
         actions.user.mouse_scroll_stop()
 
 
+def mouse_scroll_continuous(direction: str):
+    """Returns closure for either scrolling up or down"""
+    signed_Δ = setting_mouse_continuous_scroll_amount.get() * (1 if direction == "down" else -1)
+
+    def inner():
+        """Inner function to be returned"""
+        global continuous_scoll_mode
+        continuous_scoll_mode = f"scroll {direction} continuous"
+        mouse_scroll(signed_Δ)()
+
+        if scroll_job is None:
+            start_scroll()
+        if setting_mouse_hide_mouse_gui.get() == 0:
+            gui_wheel.show()
+
+    return inner
+
+
 @mod.action_class
 class Actions:
     def mouse_show_cursor():
@@ -162,17 +181,39 @@ class Actions:
         """Scrolls down"""
         mouse_scroll(setting_mouse_wheel_down_amount.get())()
 
+    # def mouse_scroll_continuous(direction: str):
+    #     """Returns closure for either scrolling up or down"""
+    #     signed_Δ = setting_mouse_continuous_scroll_amount.get() * (1 if direction == "down" else -1)
+    #     print("outer being called")
+    #     def inner():
+    #         """Inner function to be returned"""
+            
+    #         global continuous_scoll_mode
+    #         continuous_scoll_mode = f"scroll {direction} continuous"
+    #         mouse_scroll(signed_Δ)()
+
+    #         if scroll_job is None:
+    #             start_scroll()
+    #         if setting_mouse_hide_mouse_gui.get() == 0:
+    #             gui_wheel.show()
+
+    #     return inner
+
     def mouse_scroll_down_continuous():
         """Scrolls down continuously"""
-        global continuous_scoll_mode
-        continuous_scoll_mode = "scroll down continuous"
-        mouse_scroll(setting_mouse_continuous_scroll_amount.get())()
+        mouse_scroll_continuous("down")()
 
-        if scroll_job is None:
-            start_scroll()
+    # def mouse_scroll_down_continuous():
+    #     """Scrolls down continuously"""
+    #     global continuous_scoll_mode
+    #     continuous_scoll_mode = "scroll down continuous"
+    #     mouse_scroll(setting_mouse_continuous_scroll_amount.get())()
 
-        if setting_mouse_hide_mouse_gui.get() == 0:
-            gui_wheel.show()
+    #     if scroll_job is None:
+    #         start_scroll()
+
+    #     if setting_mouse_hide_mouse_gui.get() == 0:
+    #         gui_wheel.show()
 
     def mouse_scroll_up():
         """Scrolls up"""
@@ -180,14 +221,7 @@ class Actions:
 
     def mouse_scroll_up_continuous():
         """Scrolls up continuously"""
-        global continuous_scoll_mode
-        continuous_scoll_mode = "scroll up continuous"
-        mouse_scroll(-setting_mouse_continuous_scroll_amount.get())()
-
-        if scroll_job is None:
-            start_scroll()
-        if setting_mouse_hide_mouse_gui.get() == 0:
-            gui_wheel.show()
+        mouse_scroll_continuous("up")()
 
     def mouse_scroll_stop():
         """Stops scrolling"""
