@@ -255,12 +255,12 @@ cut line:
 
 
 
-cut all left: 
+cut left: 
     edit.extend_line_start()
     edit.copy()
     key(delete)
 
-cut all right:
+cut right:
     edit.extend_line_end()
     edit.copy()
     key(delete)
