@@ -10,10 +10,19 @@ go word left:
 go word right:
     edit.word_right()
 
-go left:
+^<number> before$:
+  edit.word_left()
+  repeat(number - 1)
+
+^<number> after$:
+    edit.word_right()
+  repeat(number - 1)
+
+
+left:
     edit.left()
 
-go right:
+right:
     edit.right()
 
 go up:
@@ -22,10 +31,10 @@ go up:
 go down:
     edit.down()
 
-go line start:
+lindy:
     edit.line_start()
 
-go line end:
+robbie:
     edit.line_end()
 
 go way left:
@@ -66,6 +75,27 @@ select up:
 select down:
     edit.extend_line_down()
 
+# MY CHANGES
+============
+# select previous word (imptly different from 'extend previous' in that this wouldn't select the intervening stuff)
+select previous:
+  user.edit_select_previous_word()
+
+select next:
+  user.edit_select_next_word()
+
+
+# extend selection __to__ previous / next word
+^<number> befores:
+  edit.extend_word_left()
+  repeat(number - 1)
+
+^<number> afters:
+  edit.extend_word_right()
+  repeat(number - 1)
+
+
+
 select word:
     edit.select_word()
 
@@ -75,10 +105,16 @@ select word left:
 select word right:
     edit.extend_word_right()
 
-select way left:
+
+
+
+
+#select way left:
+lecksy: 
     edit.extend_line_start()
 
-select way right:
+#select way right:  
+ricksy: 
     edit.extend_line_end()
 
 select way up:
@@ -115,6 +151,12 @@ clear down:
 clear word:
     edit.delete_word()
 
+
+
+junk previous:
+    user.edit_select_previous_word()
+    edit.delete()
+
 clear word left:
     edit.extend_word_left()
     edit.delete()
@@ -123,19 +165,19 @@ clear word right:
     edit.extend_word_right()
     edit.delete()
 
-clear way left:
+ex left:
     edit.extend_line_start()
     edit.delete()
 
-clear way right:
+ex right:
     edit.extend_line_end()
     edit.delete()
 
-clear way up:
+ex up: 
     edit.extend_file_start()
     edit.delete()
 
-clear way down:
+ex down: 
     edit.extend_file_end()
     edit.delete()
 
@@ -143,6 +185,10 @@ clear way down:
 copy all:
     edit.select_all()
     edit.copy()
+
+
+
+
 #to do: do we want these variants, seem to conflict
 # copy left:
 #      edit.extend_left()
@@ -191,7 +237,7 @@ cut everything:
 #     edit.select_all()
 #     edit.cut()
 
-cut word:
+cut it:
     edit.select_word()
     edit.cut()
 
@@ -206,3 +252,17 @@ cut word right:
 cut line:
     edit.select_line()
     edit.cut()
+
+
+
+cut all left: 
+    edit.extend_line_start()
+    edit.copy()
+    key(delete)
+
+cut all right:
+    edit.extend_line_end()
+    edit.copy()
+    key(delete)
+
+
