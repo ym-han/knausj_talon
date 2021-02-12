@@ -127,3 +127,18 @@ toggle imports: user.code_toggle_libraries()
 import <user.code_libraries>:
     user.code_insert_library(code_libraries, "")
     key(end enter)
+
+
+
+num pie array: "np.array(["
+
+num pie arrange: "np.arange("
+
+num dim: ".ndim"
+
+array shape: ".shape"
+
+reshape: ".reshape("
+
+zeros: "np.zeros("
+
