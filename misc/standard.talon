@@ -14,14 +14,18 @@ zoom in: edit.zoom_in()
 zoom out: edit.zoom_out()
 page up: key(pgup)
 page down: key(pgdown)
-copy: edit.copy()
-cut it: edit.cut()
+copy that: edit.copy()
+cut that: edit.cut()
 paste it: edit.paste()
 
 undo: edit.undo()
 redo that: edit.redo()
 paste match: edit.paste_match_style()
 save it: edit.save()
+
+screen area: key(cmd-ctrl-shift-4)
+
+comspace: ", "
 
 junk: key(backspace)    
 # might switch back to 'wipe' tho
@@ -32,3 +36,16 @@ junk: key(backspace)
 slap:
 	edit.line_end()
 	key(enter)
+
+alfred: key(cmd-space)
+veems: key(ctrl-alt-shift-v)
+
+
+# To do in the future: revert this to 'focus', and add a conditional: if already in list of running apps, just focus on it; if not, launch it.
+#launch eye term: switcher_launch("Applications/iterm2.app")
+launch sub: switcher_launch("Applications/Sublime Text.app")
+launch anki: switcher_launch("Applications/Anki.app")
+
+clipboard: key(ctrl-cmd-c)
+
+word sub read it: "subreddit"
