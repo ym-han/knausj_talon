@@ -78,12 +78,12 @@ select <number>:
 
 select indented: key("shift-cmd-j")
 
-
-selecting <number> to <number>:
-  key(ctrl-g)
-  insert("{number_1}")
-  key(enter)
-  key("cmd-l:{number_2 - number_1 + 1}")
+# need to figureut how to make this work
+#selecting <number> to <number>:
+#  key(ctrl-g)
+#  insert("{number_1}")
+#  key(enter)
+#  key("cmd-l:{(number_2 - number_1) + 1}")
 
 <number> below:
   key(down)
@@ -165,4 +165,10 @@ curse up <number>:
 #===== FINDING AND REPLACING ========
 find in files: key(cmd-shift-f)
 search replace: key(cmd-alt-f)
+
+
+repository:
+  key(cmd-shift-p)
+  insert("Sublime Merge: Open Repository")
+  key(enter)
 
