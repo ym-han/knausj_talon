@@ -95,15 +95,16 @@ action(user.code_include_local): insert('using ')
 action(user.code_comment): "//"
 
 
- 
+
 #todo: figure out how to handle typing beyond "void"
-action(user.code_private_function): insert("private void")
+action(user.code_private_function): insert("function ()")
 action(user.code_public_static_function): insert("private static void")
 action(user.code_protected_function): insert("protected void")
 action(user.code_public_function): insert("public void")
 
 
-#julia-specicic grammars
+#julia-specific grammars
+
 new function: 
   insert("function ()")
   key(enter:2)
@@ -148,38 +149,11 @@ alpha:
   clip.set_text('α')
   edit.paste()
 
+
 beta:
   clip.set_text('β')
   edit.paste()
   
-sigma:
-  clip.set_text('σ')
-  edit.paste()
-
-small gamma:
-  clip.set_text('γ')
-  edit.paste()
-
-gamma:
-  clip.set_text('Γ')
-  edit.paste()
-
-mu:
-  clip.set_text('μ')
-  edit.paste()
-
-partial:
-  clip.set_text('∂')
-  edit.paste()
-  
-theta:
-  clip.set_text('θ')
-  edit.paste()
-
-big theta:
-  clip.set_text('Θ')
-  edit.paste()
-
 member of:
   clip.set_text('∈')
   edit.paste()
@@ -200,13 +174,16 @@ not member of:
   clip.set_text('⟺')
   edit.paste()
 
-
 state for: 
   insert("for \n\n")
   insert("end")
   key(up:2)
   
   
+sym fake divide:
+  clip.set_text('𝘭')
+  edit.paste()
+
 state data frame: "DataFrame"
 state using data frames: "using DataFrames"
 
