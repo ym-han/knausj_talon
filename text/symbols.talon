@@ -1,14 +1,7 @@
-question [mark]: "?"
-(downscore | underscore): "_"
-double dash: "--"
-(bracket | brack | left bracket): "{"
-(are bracket | right bracket): "}"
 triple quote: "'''"
 (dot dot | dotdot): ".."
 #ellipses: "…"
 ellipses: "..."
-(comma and | spamma): ", "
-plus: "+"
 sym arrow: "->"
 dub arrow: "=>"
 new line: "\\n"
@@ -31,10 +24,10 @@ empty escaped string:
 (inside parens | args):
 	insert("()")
 	key(left)
-inside (squares | list): 
+inside squares: 
 	insert("[]") 
 	key(left)
-inside (bracket | braces): 
+inside braces: 
 	insert("{}") 
 	key(left)
 inside percent: 
@@ -116,6 +109,14 @@ sym theta hat:
   clip.set_text('θ̂')
   edit.paste()
 
+sym yank bar:
+  clip.set_text('ȳ')
+  edit.paste()
+
+sym plex bar:
+  clip.set_text('x̄')
+  edit.paste()
+
 sym beta:
   clip.set_text('β')
   edit.paste()
@@ -147,6 +148,11 @@ sym probability:
 
 sym variance:
   clip.set_text('𝕍')
+  edit.paste()
+
+
+sym not member of:
+  clip.set_text('∉')
   edit.paste()
 
 

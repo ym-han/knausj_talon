@@ -6,3 +6,6 @@ ship <user.letters> [(lowercase | sunk)]:
 <user.function_key>: key(function_key)
 <user.special_key>: key(special_key)
 <user.modifiers> <user.unmodified_key>: key("{modifiers}-{unmodified_key}")
+go home: key(home)
+go to end: key(end)
+press insert: key(insert)
