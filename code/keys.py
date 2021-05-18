@@ -3,7 +3,7 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look met near oil pit quench red sun trap urge vest win plex yank zip".split(
+default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near oil pit quench red sun trap urge vest whale plex yank zip".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
@@ -124,54 +124,47 @@ punctuation_words = {
     # TODO: I'm not sure why we need these, I think it has something to do with
     # Dragon. Possibly it has been fixed by later improvements to talon? -rntz
     "`": "`", ",": ",", # <== these things
-    "back tick": "`",
+    "brick": "`",
     "comma": ",",
     "period": ".",
     "semicolon": ";",
     "colon": ":",
     "forward slash": "/",
-    "question mark": "?",
+    "questos": "?",
     "exclamation mark": "!",
-    "exclamation point": "!",
     "dollar sign": "$",
     "asterisk": "*",
-    "hash sign": "#",
-    "number sign": "#",
+    #"number sign": "#",
     "percent sign": "%",
     "at sign": "@",
     "and sign": "&",
-    "ampersand": "&",
+    #"ampersand": "&",
 }
 symbol_key_words = {
-    "dot": ".",
+    "dot it": ".",
     "quote": "'",
-    "L square": "[",
-    "left square": "[",
-    "square": "[",
-    "R square": "]",
-    "right square": "]",
+    #"L square": "[",
+    #"left square": "[",
+    "lack": "[",
+    #"R square": "]",
+    "rack": "]",
     "slash": "/",
     "backslash": "\\",
     "minus": "-",
-    "dash": "-",
+    "dash sign": "-",
     "equals": "=",
     "plus": "+",
     "tilde": "~",
     "bang": "!",
     "dollar": "$",
     "down score": "_",
-    #"under score": "_",
-    "paren": "(",
-    "L paren": "(",
-    #"left paren": "(",
-    "R paren": ")",
-    #"right paren": ")",
+    "leper": "(",
+    "repper": ")",
+    
     "brace": "{",
-    #"left brace": "{",
     "R brace": "}",
-    #"right brace": "}",
-    "angle": "<",
-    #"left angle": "<",
+    #"angle": "<",
+    "left angle": "<",
     "less than": "<",
     "rangle": ">",
     #"R angle": ">",
@@ -179,13 +172,11 @@ symbol_key_words = {
     "greater than": ">",
     "star": "*",
     "pound": "#",
-    #"hash": "#",
-    "percent": "%",
+    "percy": "%",
     "caret": "^",
     "amper": "&",
     "pipe": "|",
     "dubquote": '"',
-    "double quote": '"',
 }
 
 # make punctuation words also included in {user.symbol_keys}
@@ -201,11 +192,10 @@ ctx.lists["self.arrow_key"] = {
 }
 
 simple_keys = [
-    "end",
-    "enter",
+    #"end",
+    #"enter",
     "escape",
-    "home",
-    "insert",
+    #"insert",
     "pagedown",
     "pageup",
     "space",
@@ -213,9 +203,10 @@ simple_keys = [
 ]
 
 alternate_keys = {
-    "delete": "backspace",
+    "clap": "enter",
+    "wipe": "backspace",
     "forward delete": "delete",
-    #'junk': 'backspace',
+    "scape": "escape",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
