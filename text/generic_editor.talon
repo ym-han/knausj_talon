@@ -31,10 +31,10 @@ go up:
 go down:
     edit.down()
 
-lindy:
-    edit.line_start()
+head:
+     edit.line_start()
 
-robbie:
+push:
     edit.line_end()
 
 go way left:
