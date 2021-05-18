@@ -129,16 +129,142 @@ import <user.code_libraries>:
     key(end enter)
 
 
+super init: "super().__init__()"
 
-num pie array: "np.array(["
 
-num pie arrange: "np.arange("
+# PANDAS
+pandas display max rows: "pd.set_option('display.max_rows', 500)"
 
-num dim: ".ndim"
+p print: "pp.pprint("
 
-array shape: ".shape"
+# SYNTAX COMMON TO NP and TORCH
+dee type: "dtype"
+dot zeros_like: ".zeros_like"
+dot zeros: ".zeros"
 
-reshape: ".reshape("
+dot n dim: ".ndim"
+dot shape: ".shape"
+dot reshape: ".reshape("
+dot full: ".full(shape=, fill_value=)"
+dot full like: ".full_like("
+dot eye: ".eye"
 
-zeros: "np.zeros("
+dot rand n like: ".randn_like("
+dot a range: ".arange("
+
+dot split: ".split("
+dot stack: ".stack("
+dot max: ".max("
+dot min: ".min("
+
+dot squeeze: ".squeeze("
+dot unsqueeze: ".unsqueeze("
+
+dot numel: ".numel()"
+
+# NUMPY
+n p dot: "np."
+
+np array: "np.array(["
+np zeros: "np.zeros("
+
+np a range: "np.arange("
+
+np concat: 
+    insert("np.concatenate(, axis=)")
+    key(left:10)
+
+
+# TORCH
+
+## change display precision (does not actuallly change values)
+torch display precision: "torch.set_printoptions(precision=1)"
+
+word pytorch: "pytorch"
+
+state torch: "torch"
+
+torch tensor: "torch.tensor"    
+state tensor: "tensor"
+
+torch from num pie: "torch.from_numpy("
+
+dot dee type: ".dtype"
+
+dot c p u: ".cpu()"
+
+dot clone: ".detach().clone()"
+
+dot device: ".device"
+
+dot num pie: ".numpy()"
+
+dot float: ".float()"
+dot long: ".long()"
+
+dot view: ".view("
+dot trans: ".t()"
+dot n dim: ".ndim"
+dot shape: ".shape"
+
+dot sum: ".sum"
+
+dot diag: ".diag()"
+
+dot mull: ".mul("
+dot mat mull: ".matmul("
+
+dot grad: ".grad"
+dot requires grad: ".requires_grad_()"
+requires grad: "requires_grad"
+requires grad true: "requires_grad=True"
+torch no grad: "with torch.no_grad():"
+
+
+dot backward: ".backward()"
+
+torch reshape: "torch.reshape("
+torch a range: "torch.arange("
+torch zeros: "torch.zeros("
+torch stack: "torch.stack("
+torch cat: 
+    insert("torch.cat(, dim=)")
+    key(left:7)
+torch chunk: "torch.chunk("
+torch long: "torch.long"
+torch bool: "torch.bool"
+torch float: "torch.float"
+
+torch manual seed: "torch.manual_seed(7)"
+
+torch rand: "torch.rand("
+torch rand like: "torch.rand_like("
+
+torch rand n: "torch.randn("
+torch rand n like: "torch.randn_like("
+torch normal: "torch.normal("
+torch lin space: "torch.linspace(start, end, steps)"
+
+
+# Initializing things
+device cuda if available: "device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")"
+
+usual learning rate: "learning_rate = 1e-4"
+usual L two: "λ_l2 = 1e-5"
+
+init optimizer: "optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate, weight_decay=lambda_l2) # built-in L2"
+  
+n n sequential: "nn.Sequential"
+n n linear: "nn.Linear"
+model equal sequential: "model = nn.Sequential("
+model to device: "model.to(device) #Convert to CUDA"
+
+torch cross entropy: "torch.nn.CrossEntropyLoss()"
+
+init params: "init_params("
+
+zero grad: "optimizer.zero_grad()"
+
+optimizer step: "optimizer.step()"
+
 
