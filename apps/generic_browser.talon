@@ -1,11 +1,16 @@
 tag: browser
 -
-(address bar | go address | go url): browser.focus_address()
+focus address: browser.focus_address()
+copy address: 
+    browser.focus_address()
+    key(cmd-c)
+    key(left)
+    
 go home: browser.go_home()
 forward: browser.go_forward()
 go back[ward]: browser.go_back()
 
-go private: browser.open_private_window()
+new private: browser.open_private_window()
 
 bookmark show: browser.bookmarks()
 bookmark bar: browser.bookmarks_bar()
@@ -21,6 +26,7 @@ show history: browser.show_history()
 show cache: browser.show_clear_cache()
 
 dev tools: browser.toggle_dev_tools()
+
 
 #todo - port to apps
 # navigating current page
