@@ -7,8 +7,8 @@ copy address:
     key(left)
     
 go home: browser.go_home()
-forward: browser.go_forward()
-go back[ward]: browser.go_back()
+[go] forward: browser.go_forward()
+go (back | backward): browser.go_back()
 
 new private: browser.open_private_window()
 

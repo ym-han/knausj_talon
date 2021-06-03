@@ -1,11 +1,11 @@
 #defines the commands that sleep/wake Talon
 mode: all
 -
-^get back to talon five six seven eight$:
+^talon wake six seven eight$:
     #user.mouse_wake()
     user.history_enable()
     user.talon_mode()
-^sleep all$:
+^talon sleep all$:
     user.switcher_hide_running()
     user.history_disable()
     user.homophones_hide()

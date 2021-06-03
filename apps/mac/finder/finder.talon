@@ -35,9 +35,3 @@ trash it: key(cmd-backspace)
 
 hide [finder]: key(cmd-h)
 hide others: app.window_hide_others()
-# `hide others` may be redundant given how `app.talon` has something similar, 
-# but it's not clear to me how `app.talon` is supposed to work
-
-edit sub: key(cmd-alt-o) 
-#cmd-opt-o is the keybinding for the Open in Sublime text workflow in alfred
-

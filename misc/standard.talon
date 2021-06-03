@@ -18,8 +18,10 @@ word y m: "Yongming"
 #word shell: "shell".
 zoom in: edit.zoom_in()
 zoom out: edit.zoom_out()
-page up: key(pgup)
-page down: key(pgdown)
+
+scroll up: edit.page_up()
+scroll down: edit.page_down()
+
 copy that: edit.copy()
 cut that: edit.cut()
 paste it: edit.paste()
@@ -27,7 +29,7 @@ paste it: edit.paste()
 switcher: key(alt-p)
 # for contexts app
 
-nope: edit.undo()
+nope that: edit.undo()
 redo that: edit.redo()
 paste match: edit.paste_match_style()
 save it: edit.save()

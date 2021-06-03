@@ -1,8 +1,9 @@
 #^force see sharp$: user.code_set_language_mode("csharp")
 #^force see plus plus$: user.code_set_language_mode("cplusplus")
 #^force go language$: user.code_set_language_mode("go")
+#^force type script$: user.code_set_language_mode("typescript")
+
 ^force java script$: user.code_set_language_mode("javascript")
-^force type script$: user.code_set_language_mode("typescript")
 ^force markdown$: user.code_set_language_mode("markdown")
 
 ^force python$: user.code_set_language_mode("python")
