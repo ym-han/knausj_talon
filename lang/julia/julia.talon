@@ -135,7 +135,16 @@ type of:
 state end: "end"
 state begin: "begin"
 
-groupby: "groupby("
+group by: "groupby("
+group by sort true: 
+  insert("groupby( , sort=true)")
+  key(left:13)
+
+
+
+
+
+combine count rows: "combine(nrow => :count)"
 
 vega plot: 
   insert("@vlplot()")
@@ -179,15 +188,39 @@ state for:
   insert("end")
   key(up:2)
   
-  
+
 sym fake divide:
   clip.set_text('𝘭')
   edit.paste()
+
+
+state filter: insert("filter(")
+
+at chain df: 
+  insert("@chain df begin\n\nend")
+  key(left:4)
+
+
+# TO DO: Add dir walking functions too
+
+# Data related
+
+import data packages: "using CSV, DataFrames, Chain, StatsBase\nusing TerminalPager, PrettyTables\nusing FloatingTableView\nusing Underscores"
+import standard plots packages: "using Plots, StatsPlots"
+import py call: "using PyCall"
+
 
 state data frame: "DataFrame"
 state using data frames: "using DataFrames"
 
 show df: "show(df, allcols=true)"
+check type of columns: "eltype.(eachcol(df))"
+
+describe types and missing: "describe(df, :eltype, :nmissing)"
+drop missing: "dropmissing!(df, :response, disallowmissing=true)"
+
+read csv into df: 'page_df = CSV.read("page.csv", DataFrame)'
+write tsv from df: 'df |> CSV.write("df.tsv", delim = "\t")'
 
 add package preserving: 
   insert("Pkg.add(, preserve=PRESERVE_DIRECT)")
