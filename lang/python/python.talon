@@ -93,19 +93,22 @@ action(user.code_true): "True"
 action(user.code_false): "False"
 action(user.code_document_string): user.insert_cursor("\"\"\"[|]\"\"\"")
 
-#python-specific grammars
+# Python-specific grammars
+
 dunder in it: "__init__"
 state (def | deaf | deft): "def "
 self taught: "self."
 pie test: "pytest"
 state past: "pass"
 
-^funky <user.text>$: user.code_default_function(text)
-#^pro funky <user.text>$: user.code_protected_function(text)
-^pub funky <user.text>$: user.code_public_function(text)
-#^static funky <user.text>$: user.code_private_static_function(text)
-#^pro static funky <user.text>$: user.code_protected_static_function(text)
-#^pub static funky <user.text>$: user.code_public_static_function(text)
+state description: "descrip"
+
+for index <user.letter> enumerate: insert("for idx, {letter} in enumerate(")
+for index <user.text> enumerate: insert("for idx, {text} in enumerate(")
+
+
+^new func <user.text>$: user.code_default_function(text)
+
 raise {user.python_exception}: user.insert_cursor("raise {python_exception}([|])")
 
 # for annotating function parameters
@@ -131,11 +134,42 @@ import <user.code_libraries>:
 
 super init: "super().__init__()"
 
+p print: "pp.pprint("
+
+if name main: "if __name__ == "__main__": main()"
+
+
+new dataclass: 
+    insert("@dataclass\nclass :")
+    key(left)
+new frozen dataclass: 
+    insert("@dataclass(frozen=True)\nclass :")
+    key(left)
+
 
 # PANDAS
-pandas display max rows: "pd.set_option('display.max_rows', 500)"
+p d display max rows: "pd.set_option('display.max_rows', 500)"
+p d read c s v: "pd.read_csv("
+dot head: ".head()"
+dot head <number>$: ".head({number})"
+dot i lock: ".iloc["
+dot lock: ".loc["
 
-p print: "pp.pprint("
+dot tail: ".tail("
+dot tail <number>$: ".tail({number})"
+
+import data stuff: 
+    insert("import numpy as np")
+    insert("import pandas as pd")
+
+import torch stuff:
+    insert("import numpy as np")
+    insert("import pandas as pd")
+    insert("import torch")
+    insert("from pathlib import Path")
+    insert("from fastcore.all import *")
+
+
 
 # SYNTAX COMMON TO NP and TORCH
 dee type: "dtype"
