@@ -147,7 +147,7 @@ punctuation_words = {
     "semicolon": ";",
     "colon": ":",
     "forward slash": "/",
-    "question mark": "?",
+    "questo": "?",
     "exclamation mark": "!",
     # "asterisk": "*",
     # "hashs sign": "#",
@@ -165,9 +165,9 @@ symbol_key_words = {
     # "dot": ".",
     "point": ".",
     "quote": "'",
-    "lack": "[",
-    "rack": "]",
-    "right square": "]",
+    "le square": "[",
+    # "rack": "]",
+    "r square": "]",
     "backslash": "\\",
     "minus": "-",
     "dash": "-",
@@ -192,12 +192,12 @@ symbol_key_words = {
     # "amper": "&",
     # "pipe": "|",
     "dubquote": '"',
-
     # Currencies
     "dollar sign": "$",
 }
 
 
+# TO DO: Ok I think I should make this a formatter insteadd
 saranable_key_words = {binding: f" {symbol} " for binding, symbol in symbol_key_words.items()}
 
 # make punctuation words also included in {user.symbol_keys}
