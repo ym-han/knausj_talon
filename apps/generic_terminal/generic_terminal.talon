@@ -100,33 +100,11 @@ log print:
     insert("log_printf();")
     key(left:2)
 
-#make test data: insert("dd if=/dev/urandom bs=63 count=1 >> tmp/63_rand.bytes")
-
-
-
-
-
-
-#insert("./block_cat 4 tmp/63_rand.bytes tmp/out_my_blkc.bytes > my_blkcat.log\n")
-#insert("xxd tmp/out_my_blkc.bytes > tmp/out_my_blkc.hex\n") 
-#insert("diff tmp/out_std_blkc.hex tmp/out_my_blkc.hex\n")
-
-
 
 
 g d b follow fork: "set follow-fork-mode child"
 
 
-show buff: "p buff\n"
-
-show cache: "p f->cache\n"
-show in cache: "p in->cache\n"
-show out cache: "p out->cache\n"
-d b g: 'p dbg(f, "")\n'
-
-#g d b linked list: "gdb linked_list\n"
-
-head list: "p *head_list\n"
 
 clear screen: "clear\n"
 
