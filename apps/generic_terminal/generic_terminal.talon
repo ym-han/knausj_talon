@@ -75,12 +75,6 @@ three hundred project:
     insert("cd *pro*\n")
     insert("cd distr*\n")
 
-start go weensy: 
-    insert("cd '/Users/ymh/Documents/Git_repos/cs_stuff/cs300_env/'\n")
-    insert("./cs300-run-docker\n")
-    insert("cd *pro*\n")
-    insert("cd ween*\n")
-
 make tee san: "make TSAN=1"
 
 run tests with tee san: "./run_tests -s -z server_part1"
@@ -91,10 +85,10 @@ run queue tests with tee san: "./run_tests -s -z queue"
 
 make run: "make run\n"
 
-three hundred labs: 
-    insert("cd '/Users/ymh/Documents/Git_repos/cs_stuff/cs300_env/'\n")
-    insert("./cs300-run-docker\n")
-    insert("cd *labs*\n")
+#three hundred labs: 
+#    insert("cd '/Users/ymh/Documents/Git_repos/cs_stuff/cs300_env/'\n")
+#    insert("./cs300-run-docker\n")
+#    insert("cd *labs*\n")
 
 clean and run: "make clean; make run\n"
 
@@ -105,113 +99,12 @@ make check: "make check"
 log print: 
     insert("log_printf();")
     key(left:2)
-kill emulator: insert("sudo killall qemu-system-x86_64\n")
 
 #make test data: insert("dd if=/dev/urandom bs=63 count=1 >> tmp/63_rand.bytes")
 
-make byte cat: 
-    insert("make clean\n")
-    insert("make -B IMPL=student byte_cat\n")
-run byte cat: 
-    insert("rm tmp/out.txt\n")
-    insert("touch tmp/out.txt\n")
-    insert("./byte_cat r\n")
-    insert("less tmp/out.txt\n")
-
-make run byte cat:
-    insert("make clean\n")
-    insert("make -B IMPL=student byte_cat\n")
-    insert("rm tmp/out.txt\n")
-    insert("touch tmp/out.txt\n")
-    insert("./byte_cat test_files/tiny.txt tmp/out.txt\n")
-    insert("less tmp/out.txt\n")
-
-
-byte cat some bytes:
-    insert("make clean\n")
-    insert("make -B IMPL=student byte_cat\n")
-    insert("rm tmp/my_bc_out.bytes\n")
-    insert("rm tmp/my_bc_out.hex\n")
-    insert("touch tmp/my_bc_out.bytes\n")
-    insert("./byte_cat test_files/some.bytes tmp/my_bc_out.bytes\n")
-    insert("xxd tmp/my_bc_out.bytes > tmp/my_bc_out.hex\n")
-    insert("xxd test_files/some.bytes > tmp/some_bytes.hex\n")
-    insert("diff tmp/some_bytes.hex tmp/my_bc_out.hex\n")
-
-standard byte cat some bytes:
-    insert("make clean\n")
-    insert("make -B IMPL=stdio byte_cat\n")
-    insert("rm tmp/stdio_bc_some.bytes\n")
-    insert("touch tmp/stdio_bc_some.bytes\n")
-    insert("./byte_cat test_files/some.bytes tmp/stdio_bc_some.bytes\n")
-    insert("diff test_files/some.bytes tmp/stdio_bc_some.bytes\n")
 
 
 
-make run reverse byte cat:
-    insert("make clean\n")
-    insert("make -B IMPL=student reverse_byte_cat\n")
-    insert("rm tmp/out.txt\n")
-    insert("touch tmp/out.txt\n")
-    insert("./reverse_byte_cat test_files/tiny.txt tmp/out.txt\n")
-    insert("diff tmp/rbc_stdio_out.txt tmp/out.txt\n")
-
-#insert("less tmp/out.txt\n")
-
-make run standard i o reverse byte cat:
-    insert("make clean\n")
-    insert("make -B IMPL=stdio reverse_byte_cat\n")
-    insert("rm tmp/rbc_stdio_out.txt\n")
-    insert("touch tmp/rbc_stdio_out.txt\n")
-    insert("./reverse_byte_cat test_files/tiny.txt tmp/rbc_stdio_out.txt\n")
-    insert("diff tmp/rbc_stdio_out.txt tmp/out.txt\n")
-
-make standard block cat: 
-    insert("make clean\n")
-    insert("rm tmp/out_std_blkc\n")
-    insert("touch tmp/out_std_blkc.bytes\n")
-    insert("make -B IMPL=stdio block_cat\n")
-    insert("./block_cat 4 tmp/63_rand.bytes tmp/out_std_blkc.bytes\n")
-    insert("xxd tmp/out_std_blkc.bytes > tmp/out_std_blkc.hex\n")
-
-make my block cat:
-    insert("make clean\n")
-    insert("rm tmp/out_my_blkcat_dursley.txt\n")
-    insert("touch tmp/out_my_blkcat_dursley.txt\n")
-    insert("make -B IMPL=student block_cat_for_debug\n")
-    insert("./block_cat_for_debug 3 test_files/dursley_small.txt tmp/out_my_blkcat_dursley.txt > my_blkcat.log\n") 
-    insert("diff test_files/dursley_small.txt tmp/out_my_blkcat_dursley.txt\n")
-
-run block cat in g d b: "r 3 test_files/dursley_small.txt tmp/out_my_blkcat_dursley.txt"
-
-make six three block cat:
-    insert("make clean\n")
-    insert("rm tmp/out_my_blkcat_dursley.txt\n")
-    insert("touch tmp/out_my_blkcat_dursley.txt\n")
-    insert("make -B IMPL=student block_cat_for_debug\n")
-    insert("./block_cat_for_debug 7 tmp/63_rand.bytes tmp/out_63_blkc.bytes > my_blkcat.log\n") 
-    insert("xxd tmp/out_63_blkc.bytes > tmp/out_63_blkc.hex\n")
-    insert("xxd tmp/63_rand.bytes > tmp/63_rand.hex\n")
-    insert("diff tmp/63_rand.hex tmp/out_63_blkc.hex\n")
-
-
-
-
-make reverse block cat:
-    insert("make clean\n")
-    insert("rm tmp/out_my_rblc.txt\n")
-    insert("touch tmp/out_my_rblc.txt\n")
-    insert("make -B IMPL=student reverse_block_cat\n")
-    insert("./reverse_block_cat 5 test_files/dursley_small.txt tmp/out_my_rblc.txt > my_revblc.log\n") 
-    insert("diff tmp/out_stdio_reverse_blc.txt tmp/out_my_rblc.txt\n")
-
-make standard reverse block cat:
-    insert("make clean\n")
-    insert("rm tmp/out_stdio_reverse_blc.txt\n")
-    insert("touch tmp/out_stdio_reverse_blc.txt\n")
-    insert("make -B IMPL=stdio reverse_block_cat\n")
-    insert("./reverse_block_cat 5 test_files/dursley_small.txt tmp/out_stdio_reverse_blc.txt\n") 
-    
 
 
 #insert("./block_cat 4 tmp/63_rand.bytes tmp/out_my_blkc.bytes > my_blkcat.log\n")
@@ -220,43 +113,6 @@ make standard reverse block cat:
 
 
 
-# make my block cat: 
-#    insert("make clean\n")
-#    insert("make -B IMPL=student block_cat\n")
-
-
-#make run block cat:
-#    insert("make clean\n")
-#    insert("make -B IMPL=student block_cat\n")
-#    insert("rm tmp/out_my_blkc.bytes\n")
-#    insert("touch tmp/out_my_blkc.bytes\n")
-#    insert("./block_cat 32 test_files/some.bytes tmp/out_my_blkc.bytes\n")
-#    insert("xxd tmp/out_my_blkc.bytes > tmp/out_my_blkc.hex\n")
-#    insert("xxd test_files/some.bytes > test_files/some_bytes.hex\n")
-#    insert("diff test_files/some_bytes.hex tmp/out_my_blkc.hex\n")
-
-
-set usual break points:
-    insert("b read_some_may_not_be_cached\n")
-    insert("b io300_read\n")
-    insert("b write_if_some_not_cached\n")
-    insert("b write_starting_anew\n")
-    insert("b io300_write\n")
-    insert("b read_snci_region_not_start_in_cache\n")
-    insert("b read_snc_inner\n")
-
-#run block cat: "./block_cat 10 test_files/some.bytes tmp/out.bytes\n"
-run small in g d b: "r 5 test_files/dursley_small.txt tmp/out_my_rblc.txt"
-
-run with tiny: "r test_files/tiny.txt\n"
-run with tiny and out: "r test_files/tiny.txt tmp/out.txt\n"
-
-state reverse byte cat: "reverse_byte_cat"
-
-g d b byte cat: "gdb -tui byte_cat\n"
-g d b block cat: "gdb -tui block_cat_for_debug\n"
-g d b reverse byte cat: "gdb -tui reverse_byte_cat\n"
-g d b reverse block cat: "gdb -tui reverse_block_cat\n"
 
 g d b follow fork: "set follow-fork-mode child"
 
