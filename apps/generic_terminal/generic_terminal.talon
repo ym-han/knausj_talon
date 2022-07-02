@@ -27,6 +27,11 @@ we get: "wget "
 make dear: "mkdir "
 
 
+find large files: "sudo find / -size +120M -type f -exec du -h {} \; | sort -n | tail -n 50"
+
+docker images: "docker images"
+
+
 clear screen: user.terminal_clear_screen()
 #kill all: user.terminal_kill_all()
 
@@ -36,6 +41,8 @@ change all accessed:
 
 gzip file: "gzip -d "
 gunzip recursive: "gunzip -r "
+
+zee shirk: ".zshrc"
 
 # find . -iname '*.zip' -exec sh -c 'unzip -o -d "${0%.*}" "$0"' '{}' ';'
 # https://stackoverflow.com/questions/107995/how-do-you-recursively-unzip-archives-in-a-directory-and-its-subdirectories-from
@@ -51,6 +58,8 @@ git name: "ym-han\n"
 r grep: "rg "
 grep in python file: "rg tofind --type py"
 grep ignore case: "rg -i "
+
+grep history: "history|rg"
 
 sublime: "subl "
 
@@ -85,29 +94,30 @@ run queue tests with tee san: "./run_tests -s -z queue"
 
 make run: "make run\n"
 
-#three hundred labs: 
-#    insert("cd '/Users/ymh/Documents/Git_repos/cs_stuff/cs300_env/'\n")
-#    insert("./cs300-run-docker\n")
-#    insert("cd *labs*\n")
-
 clean and run: "make clean; make run\n"
 
 make clean all: "make clean all\n"
 make clean: "make clean\n"
 make check: "make check"
 
-log print: 
-    insert("log_printf();")
-    key(left:2)
+
+clear screen: "clear\n"
 
 
 
 g d b follow fork: "set follow-fork-mode child"
 
-
-
-clear screen: "clear\n"
-
+# ==== Haskell related
+cabal update: "cabal update"
+cabal install: "cabal install"
+cabal install lib: "cabal install --lib "
+cabal init: "cabal init"
+cabal init interactive: "cabal init --interactive"
+cabal build: "cabal build "
+cabal repl: "cabal repl "
+cabal exec: "cabal exec "
+cabal run: "cabal run "
+cabal help: "cabal help "
 
 # === ENVIRONMENTS
 make virtual environment: "virtualenv"
