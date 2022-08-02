@@ -197,9 +197,16 @@ symbol_key_words = {
 }
 
 
+only_for_saran = {
+    "big arrow": "=>",
+    "arrow": "->",
+}
+
+ 
 # TO DO: Ok I think I should make this a formatter insteadd
 saranable_key_words = {binding: f" {symbol} " for binding, symbol in symbol_key_words.items()}
-
+saranable_key_words.update( {binding: f" {symbol} " for binding, symbol in only_for_saran.items()})
+ 
 # make punctuation words also included in {user.symbol_keys}
 symbol_key_words.update(punctuation_words)
 ctx.lists["self.punctuation"] = punctuation_words
@@ -211,7 +218,7 @@ ctx.lists["self.arrow_key"] = {
     "down": "down",
     "left": "left",
     "right": "right",
-    "up": "up",
+    # "up": "up",
 }
 
 simple_keys = [

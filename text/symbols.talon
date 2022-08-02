@@ -1,16 +1,41 @@
-questo: "?"
+
 double dash: "--"
 triple quote: "'''"
 triple batick:
     insert("```")
 
+
+
+# Temp Haskell stuff; move out to its own file after done refactoring knausj stuff
+
+# [from wenkokke] useful commands for adding new cases
+add constructor:
+  edit.line_insert_down()
+  "| "
+
+state instance functor: 
+  insert("instance Functor ? where\n")
+  insert("  -- fmap :: (a -> b) -> m a -> m b\n")
+  insert("fmap \n")
+  key(left:2)
+  
+state eff map: "fmap "
+ 
+
+import data text: "import Data.Text"
+import numeric natural: "import Numeric.Natural\n"
+
+
+
 state h t t p: "http://"
 
-space qual: " = "
+has type: " :: "
  
+
 ellipses: "..."
 
-state mutex: "mtx"
+
+sym pipe: "|"
 
 sym caret: "^"
 sym arrow: "->"
@@ -32,12 +57,13 @@ empty escaped string:
     "\\'\\'"
     key(left)
     key(left)
+empty square: "[]"
 
 args: "()"
 inside parens:
 	insert("()")
 	key(left)
-inside brackets:
+inside square:
 	insert("[]")
 	key(left)
 inside braces:
