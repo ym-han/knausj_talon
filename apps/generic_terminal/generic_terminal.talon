@@ -19,6 +19,8 @@ cd up: "cd ../\n"
 
 
 # file management
+find file: "fd -HI "
+
 move file: "mv "
 copy file: "cp "
 
@@ -107,7 +109,7 @@ clear screen: "clear\n"
 
 g d b follow fork: "set follow-fork-mode child"
 
-# ==== Haskell related
+# === Haskell related
 cabal update: "cabal update"
 cabal install: "cabal install"
 cabal install lib: "cabal install --lib "
@@ -118,6 +120,12 @@ cabal repl: "cabal repl "
 cabal exec: "cabal exec "
 cabal run: "cabal run "
 cabal help: "cabal help "
+
+
+# === JAVASCRIPT related
+
+run e s lint: "npx eslint "
+
 
 # === ENVIRONMENTS
 make virtual environment: "virtualenv"
