@@ -78,7 +78,7 @@ switch project:
 # ==== SELECTIONS
 
 #select line# in ST
-select <number>:
+row <number>:
   key(ctrl-g)
   insert("{number}")
   key(enter)
