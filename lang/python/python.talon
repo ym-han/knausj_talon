@@ -150,6 +150,7 @@ dot string split: ".str.split("
 import data stuff: 
     insert("import numpy as np\n")
     insert("import pandas as pd\n")
+    insert("import altair as alt\n")
     insert("import pickle\n")
     insert("from pathlib import Path\n")
     #insert("from fastcore.all import *\n")
@@ -294,7 +295,7 @@ torch lin space: "torch.linspace(start, end, steps)"
 
 torch L two norm: "torch.linalg.norm("
 
-sea born lineplot: "sns.lineplot(x= , y= , label='$$')"
+sea born lineplot: "sns.lineplot(x= , y= , label='')"
 
 # Initializing things
 
@@ -326,3 +327,11 @@ zero grad: "optimizer.zero_grad()"
 optimizer step: "optimizer.step()"
 
 
+alt dot chart: "alt.Chart("
+
+dot mark point: ".mark_point()"
+
+dot mark line: ".mark_line()"
+dot mark tick: ".mark_tick()"
+
+dot encode: ".encode("
