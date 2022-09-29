@@ -1,5 +1,7 @@
 tag: user.line_commands
 -
+#Aug 27 notes: These do not seem to work in the browser
+
 #this defines some common line commands. More may be defined that are ide-specific.
 #lend: edit.line_end()
 #bend: edit.line_start()
