@@ -1,1 +1,1 @@
-{user.file_extension}: "{file_extension}"
+state {user.file_extension}: "{file_extension}"

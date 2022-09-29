@@ -1,3 +1,4 @@
+haskell tag: "Haskell:  "
 
 zoom in: edit.zoom_in()
 zoom out: edit.zoom_out()
@@ -10,6 +11,7 @@ cut it: edit.cut()
 paste it: edit.paste() 
 
 slow mode: mode.enable("user.slow")
+fast mode: mode.disable("user.slow")
 
 switcher: key(alt-p)
 # for Contexts app

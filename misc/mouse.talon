@@ -1,10 +1,13 @@
+-
+tag(): user.mouse_cursor_commands_enable
+
 control mouse: user.mouse_toggle_control_mouse()
 
 key(cmd-alt-shift-m): 
 	user.mouse_toggle_control_mouse()
 	user.mouse_toggle_zoom_mouse()
 
-zoomy mouse: user.mouse_toggle_zoom_mouse()
+#zee mouse: user.mouse_toggle_zoom_mouse()
 
 camera overlay: user.mouse_toggle_camera_overlay()
 run calibration: user.mouse_calibrate()	
@@ -135,6 +138,6 @@ scroll tiny right here:
     user.mouse_scroll_right(0.5)
 
 copy mouse position: user.copy_mouse_position()
-curse no:
+#curse no:
     # Command added 2021-12-13, can remove after 2022-06-01
-    app.notify("Please activate the user.mouse_cursor_commands_enable tag to enable this command")
+#   app.notify("Please activate the user.mouse_cursor_commands_enable tag to enable this command")
