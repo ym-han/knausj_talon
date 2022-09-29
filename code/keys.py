@@ -150,7 +150,7 @@ punctuation_words = {
     "questo": "?",
     "exclamation mark": "!",
     # "asterisk": "*",
-    # "hashs sign": "#",
+    # "hash sign": "#",
     # "number sign": "#",
     "percent sign": "%",
     "at sign": "@",
@@ -159,13 +159,13 @@ punctuation_words = {
 
     # Currencies
     "dollar sign": "$",
-    "pound sign": "£",
+    # "pound sign": "£",
 }
 symbol_key_words = {
     # "dot": ".",
     "point": ".",
     "quote": "'",
-    "le square": "[",
+    "l square": "[",
     # "rack": "]",
     "r square": "]",
     "backslash": "\\",
@@ -186,7 +186,7 @@ symbol_key_words = {
     
     "rangle": ">",
     "starry": "*",
-    "hash": "#",
+    "pound": "#",
     # "percent": "%",
     # "caret": "^",
     # "amper": "&",
