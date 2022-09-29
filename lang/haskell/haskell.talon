@@ -16,6 +16,12 @@ settings():
     user.code_protected_variable_formatter = "PRIVATE_CAMEL_CASE"
     user.code_public_variable_formatter = "PRIVATE_CAMEL_CASE"
 
+pragma scoped type variables: "{-# LANGUAGE ScopedTypeVariables #-}"
+pragma type applications: "{-# LANGUAGE TypeApplications #-}"
+
+set type applications: ":set -XTypeApplications\n"
+set print for all: ":set -fprint-explicit-foralls\n"
+
 modulo: " mod "
 
 (let | state let): "let "
@@ -41,3 +47,8 @@ body <user.text>: user.haskell_function_body(text)
 state first: "fst"
 state second: "snd"
 put string line: "putStrLn" 
+
+mappend: "<>"
+
+import text: "import Data.Char qualified as Char\nimport Data.Text qualified as T\n"
+
