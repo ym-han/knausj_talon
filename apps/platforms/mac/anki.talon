@@ -16,6 +16,14 @@ paste code:
   insert("py")
   key(enter)
 
+
+paste jay code: 
+  key(alt-s)
+  key(down:2)
+  key(right)
+  insert("j")
+  key(enter)
+
 paste julia code: 
   key(alt-s)
   insert("Select from")
@@ -25,3 +33,13 @@ paste julia code:
   key(enter)
 
 paste custom language code: key(alt-s)
+
+haskell evaluate: "Haskell: What does the following evaluate to?\n\n"
+jay evaluate: "Javascript: What does the following evaluate to?\n\n"
+jay output: "Javascript: What will the following code output?\n\n"
+launch school tag: "Launch School:  "
+jay tag: "Javascript:  "
+
+one twenty tag: "JS120:  "
+
+state true false: "True/False:  "
