@@ -24,13 +24,35 @@ settings():
     user.code_protected_variable_formatter = "PRIVATE_CAMEL_CASE"
     user.code_public_variable_formatter = "PRIVATE_CAMEL_CASE"
 
-(op | is) strict equal: " === "
-(op | is) strict not equal: " !== "
+math floor: "Math.floor("
+math ceiling: "Math.ceil("
+math random: "Math.random()"
+math log: "Math.log("
+math log ten: "Math.log10("
+math power: "Math.pow("
+math sign: "Math.sign("
+math abs: "Math.abs("
+
+new func: 
+    insert("function () {\n")
+    key(left:5)
+
+
+semi: ";"
+
+
+
+begin code: "```javascript\n"
+end code: "```"
+
+begin source j s: "#+BEGIN_SRC javascript"
+end source: "#+END_SRC"
+
+is equal: " === "
+not equal: " !== "
 
 state const: "const "
-
 state let: "let "
-
 state var: "var "
 
 state export: "export "
@@ -39,20 +61,139 @@ state async: "async "
 
 state await: "await "
 
-state map:
+
+state symbol: "Symbol"
+
+state switch: 
+    insert("switch () {")
+    key(left:3)
+
+dot slice: ".slice("
+dot splice: ".splice("
+
+dot length: ".length"
+
+dot map:
     insert(".map()")
     key(left)
 
-state filter:
+dot filter:
     insert(".filter()")
     key(left)
 
-state reduce:
-    insert(".reduce()")
-    key(left)
+dot reduce: ".reduce("
+
+#dot reduce: 
+#    insert(".reduce((acc, curr) => ..., init)")
+#    key(left:7)
+
+#dot reduce with index:
+#    insert(".reduce((acc, curr, currIdx) => ..., init)")
+#    key(left:7)    
+
+vee go <number>:
+    key(esc)
+    insert("{number}")
+    key(shift-g) 
+
+vee back: ctrl-o
+
+copy <number>:  
+    key(esc)
+    insert("{number}")
+    key(shift-g)
+    insert("yy")
+    
+ 
+bring <number>:
+    key(esc)
+    insert("mz")
+    insert("{number}")
+    key(shift-g)
+    insert("yy")
+    insert("'z")
+    key(p)
+
+
+
+
+
+console log: 
+    insert("console.log();")
+    key(left:2)
 
 state spread: "..."
+
+state input: "INPUT: "
+state output: "OUTPUT: "
+state examples: "EGS: "
+state algo: "ALGO: \n"
 
 from import:
     insert(' from  ""')
     key("left")
+
+dot for each: ".forEach("
+
+dot split: ".split("
+dot split to chars: ".split('')"
+
+dot to upper case: ".toUpperCase()"
+dot to lower case: ".toLowerCase()"
+
+# for code signal
+#palette: key(F1)
+
+
+insert mode: 
+    key(esc)
+    key(i)
+
+state require readline: "const readline = require('readline-sync');"
+readline [dot] question: "readline.question();"
+readline [dot] prompt: "readline.prompt();"
+
+dot replace all: ".replaceAll("
+
+dot concat: ".concat("
+
+dot push: ".push("
+dot pop: ".pop()"
+
+run test: "node test.js\n"
+
+
+number is nan: "Number.isNaN("
+
+
+dot has own property: ".hasOwnProperty("
+
+for value of: 
+    insert("for ( of ) {")
+    key(left:7)
+
+for key value of object: 
+    insert("""for (const [key, value] of Object.entries()) {\n""")
+    key(left:5)
+
+for pair of object entries: 
+    insert("""for (const kvPair of Object.entries()) {\n""")
+    key(left:5)
+
+object keys: "Object.keys("
+object keys includes: 
+    insert("Object.keys().includes")
+    key(left:10)
+
+object freeze: "Object.freeze("
+object entries: "Object.entries("
+object values: "Object.values("
+
+
+begin block comment: "/*"
+end block comment: "*/"
+
+
+interp string: "${"
+
+run it: key(cmd-enter)
