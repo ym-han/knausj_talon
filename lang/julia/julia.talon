@@ -299,5 +299,5 @@ ggplot scatter facet:
 
 
 facet wrap: "facet_wrap(~"
-space plus: " + "
+
 
