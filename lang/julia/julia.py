@@ -139,8 +139,8 @@ class UserActions:
     def code_comment_line_prefix(): actions.auto_insert('# ')
     def code_state_return():
         actions.insert('return ')
-    def code_insert_true():            actions.auto_insert('True')
-    def code_insert_false():           actions.auto_insert('False')
+    def code_insert_true():            actions.auto_insert('true')
+    def code_insert_false():           actions.auto_insert('false')
     def code_comment_documentation(): actions.user.insert_cursor('"""[|]"""')
     def code_insert_function(text: str, selection: str):
         if selection:
