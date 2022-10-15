@@ -22,7 +22,7 @@ tag(): user.code_operators_math
 
 settings():
     user.code_private_function_formatter = "SNAKE_CASE"
-    user. = "SNAKE_CASE"
+    user.code_protected_function_formatter = "SNAKE_CASE"
     user.code_public_function_formatter = "SNAKE_CASE"
     user.code_private_variable_formatter = "SNAKE_CASE"
     user.code_protected_variable_formatter = "SNAKE_CASE"
@@ -335,3 +335,5 @@ dot mark line: ".mark_line()"
 dot mark tick: ".mark_tick()"
 
 dot encode: ".encode("
+
+jupyter retina figure format: "%config InlineBackend.figure_format ='retina'"
