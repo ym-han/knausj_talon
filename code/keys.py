@@ -196,7 +196,7 @@ symbol_key_words = {
     "dollar sign": "$",
 }
 
-
+ 
 only_for_saran = {
     "big arrow": "=>",
     "arrow": "->",
@@ -218,7 +218,7 @@ ctx.lists["self.arrow_key"] = {
     "down": "down",
     "left": "left",
     "right": "right",
-    # "up": "up",
+    "up": "up",
 }
 
 simple_keys = [
