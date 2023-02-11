@@ -1,3 +1,5 @@
+semi space: "; "
+
 sync dpt: "dptrp1 sync "/Users/ymh/Dropbox/Sony Reader Sync" Document/sync"
 haskell tag: "Haskell:  "
 
@@ -7,9 +9,12 @@ zoom out: edit.zoom_out()
 scroll up: edit.page_up()
 scroll down: edit.page_down()
 
-cop it: edit.copy()
+cop it: edit.copy() # lol move this to generic_editor?
 cut it: edit.cut()
 paste it: edit.paste() 
+
+
+
 
 slow mode: mode.enable("user.slow")
 fast mode: mode.disable("user.slow")
