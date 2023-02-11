@@ -57,11 +57,11 @@ zee shirk: ".zshrc"
 
 git name: "ym-han\n"
 
-r grep: "rg "
+ripgrep: "rg "
 grep in python file: "rg tofind --type py"
 grep ignore case: "rg -i "
 
-grep history: "history|rg"
+grep hist: "history|rg "
 
 sublime: "subl "
 
@@ -73,24 +73,24 @@ pseduo a p t install: "sudo apt install "
 go to three hundred projects: "cd *projects*\n"
 
 # ==== CS300 related
-three hundred container: "'/Users/ymh/Documents/Git_repos/cs_stuff/cs300_env/cs300-run-docker'"
+#three hundred container: "'/Users/ymh/Documents/Git_repos/cs_stuff/cs300_env/cs300-run-docker'"
 
-remove p b c c: "rm *.pb.cc"
+#remove p b c c: "rm *.pb.cc"
 # necessary if get fatal error: shardkv.pb.h: No such file or directory
 
-make shardmaster: "make clean; make; make shardmaster_complex_moves\n"
+#make shardmaster: "make clean; make; make shardmaster_complex_moves\n"
 
-three hundred project: 
-    insert("cd '/Users/ymh/Documents/Git_repos/cs_stuff/cs300_env/'\n")
-    insert("./cs300-run-docker\n")
-    insert("cd *pro*\n")
-    insert("cd distr*\n")
+#three hundred project: 
+#    insert("cd '/Users/ymh/Documents/Git_repos/cs_stuff/cs300_env/'\n")
+#    insert("./cs300-run-docker\n")
+#    insert("cd *pro*\n")
+#    insert("cd distr*\n")
 
-make tee san: "make TSAN=1"
+#make tee san: "make TSAN=1"
 
-run tests with tee san: "./run_tests -s -z server_part1"
+#run tests with tee san: "./run_tests -s -z server_part1"
 
-run queue tests with tee san: "./run_tests -s -z queue"
+#run queue tests with tee san: "./run_tests -s -z queue"
 
 #gdb tests/server_part1/test3_process_requests
 
@@ -103,7 +103,7 @@ make clean: "make clean\n"
 make check: "make check"
 
 
-clear screen: "clear\n"
+#clear screen: "clear\n"
 
 
 
@@ -130,17 +130,32 @@ run e s lint: "npx eslint "
 # === ENVIRONMENTS
 make virtual environment: "virtualenv"
 #environment reel: "source ~/environments/rel/bin/activate\n"
-environment text gen: "source ~/environments/textgen/bin/activate\n"
-environment termolator: "source ~/environments/termo/bin/activate\n"
-environment lip reading: "source /users/yh31/scratch/projects/lip/lip_env/bin/activate\n"
+#environment text gen: "source ~/environments/textgen/bin/activate\n"
+#environment termolator: "source ~/environments/termo/bin/activate\n"
+#environment lip reading: "source /users/yh31/scratch/projects/lip/lip_env/bin/activate\n"
 
 deactivate environment: "deactivate"
 
+# === SCREEN
+# https://linuxize.com/post/how-to-use-linux-screen/
 
-# === SPECIFIC PATHS
+start screen: "screen"
+new screen window: 
+    key(ctrl-a)
+    key(c)
+# https://www.davandshy.com/creating-reattachable-ssh-sessions-with-mosh-screen/
 
-#personal termolator path: "/users/yh31/packages/The_Termolator/"
-#set termo variable: 'export TERMOLATOR="/users/yh31/packages/The_Termolator"'
+screen help: 
+    key(ctrl-a)
+    key(?)
+
+screen lisa: "screen -ls\n"
+
+screen reattach: "screen -r "
+
+
+present dir: "pwd\n"
+
 
 # === OSCAR
 log into oscar: "ssh -Y yh31@ssh.ccv.brown.edu\n"
@@ -250,7 +265,7 @@ download from bucket: "gsutil cp gs://coref_gpt/OBJECT_NAME SAVE_TO_LOCATION"
 
 # === VIM related
 
-replace with copied: 
+vim replace paste: 
     insert("gg")
     sleep(1ms)
     insert("dG")
