@@ -1,5 +1,5 @@
 semi space: "; "
-
+dot talon: ".talon"
 sync dpt: "dptrp1 sync "/Users/ymh/Dropbox/Sony Reader Sync" Document/sync"
 haskell tag: "Haskell:  "
 
