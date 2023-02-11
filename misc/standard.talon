@@ -1,3 +1,4 @@
+sync dpt: "dptrp1 sync "/Users/ymh/Dropbox/Sony Reader Sync" Document/sync"
 haskell tag: "Haskell:  "
 
 zoom in: edit.zoom_in()
@@ -13,7 +14,9 @@ paste it: edit.paste()
 slow mode: mode.enable("user.slow")
 fast mode: mode.disable("user.slow")
 
-switcher: key(alt-p)
+witcher: key(ctrl-space)
+
+#switcher: key(alt-p)
 # for Contexts app
 
 nope that: edit.undo()
