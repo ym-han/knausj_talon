@@ -1,8 +1,7 @@
 
-double dash: "--"
+sym big dash: " --- "
 triple quote: "'''"
-triple batick:
-    insert("```")
+triple batick: insert("```")
 
 
 
