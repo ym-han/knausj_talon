@@ -12,7 +12,7 @@ mod.list(
 
 website_defaults = {
     "amazon": "https://www.amazon.com/",
-    "dropbox": "https://dropbox.com/",
+    # "dropbox": "https://dropbox.com/",
     "google": "https://www.google.com/",
     "google calendar": "https://calendar.google.com",
     "google maps": "https://maps.google.com/",
@@ -22,6 +22,7 @@ website_defaults = {
     "gist": "https://gist.github.com/",
     "wikipedia": "https://en.wikipedia.org/",
     "youtube": "https://www.youtube.com/",
+    "asana": "https://app.asana.com/0/1203445122505498/list",
 }
 
 _search_engine_defaults = {
