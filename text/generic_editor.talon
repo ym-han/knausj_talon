@@ -22,17 +22,17 @@ go word right:
 steppy:
     edit.word_right()
 
-[<number_small>] left:
-    user.left(number_small or 1)
+left <number_small>:
+    user.left(number_small)
 
-[<number_small>] right:
-    user.right(number_small or 1)
+right <number_small>:
+    user.right(number_small)
 
-[<number_small>] up:
-    user.up(number_small or 1)
+up <number_small>:
+    user.up(number_small)
 
-[<number_small>] down:
-    user.down(number_small or 1)
+down <number_small>:
+    user.down(number_small)
 
 head:
     edit.line_start()
