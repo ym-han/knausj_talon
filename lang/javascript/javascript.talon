@@ -8,7 +8,8 @@ tag(): user.code_comment_block_c_like
 tag(): user.code_data_bool
 tag(): user.code_data_null
 tag(): user.code_functions
-tag(): user.code_functions_gui
+tag(): user.code_functions_common
+tag(): user.code_keywords
 tag(): user.code_libraries
 tag(): user.code_operators_array
 tag(): user.code_operators_assignment
@@ -24,14 +25,9 @@ settings():
     user.code_protected_variable_formatter = "PRIVATE_CAMEL_CASE"
     user.code_public_variable_formatter = "PRIVATE_CAMEL_CASE"
 
-math floor: "Math.floor("
-math ceiling: "Math.ceil("
-math random: "Math.random()"
-math log: "Math.log("
-math log ten: "Math.log10("
-math power: "Math.pow("
-math sign: "Math.sign("
-math abs: "Math.abs("
+(op | is) strict equal: " === "
+(op | is) strict not equal: " !== "
+op null else: " ?? "
 
 new func: 
     insert("function () {\n")
@@ -51,6 +47,16 @@ end source: "#+END_SRC"
 is equal: " === "
 not equal: " !== "
 
+math floor: "Math.floor("
+math ceiling: "Math.ceil("
+math random: "Math.random()"
+math log: "Math.log("
+math log ten: "Math.log10("
+math power: "Math.pow("
+math sign: "Math.sign("
+math abs: "Math.abs("
+
+
 state const: "const "
 state let: "let "
 state var: "var "
@@ -62,26 +68,12 @@ state async: "async "
 state await: "await "
 
 
+
 state symbol: "Symbol"
 
 state switch: 
     insert("switch () {")
     key(left:3)
-
-dot slice: ".slice("
-dot splice: ".splice("
-
-dot length: ".length"
-
-dot map:
-    insert(".map()")
-    key(left)
-
-dot filter:
-    insert(".filter()")
-    key(left)
-
-dot reduce: ".reduce("
 
 #dot reduce: 
 #    insert(".reduce((acc, curr) => ..., init)")
@@ -98,23 +90,21 @@ vee go <number>:
 
 vee back: ctrl-o
 
-copy <number>:  
-    key(esc)
-    insert("{number}")
-    key(shift-g)
-    insert("yy")
+#copy <number>:  
+#    key(esc)
+#    insert("{number}")
+#    key(shift-g)
+#    insert("yy")
     
  
-bring <number>:
-    key(esc)
-    insert("mz")
-    insert("{number}")
-    key(shift-g)
-    insert("yy")
-    insert("'z")
-    key(p)
-
-
+#bring <number>:
+#    key(esc)
+#    insert("mz")
+#    insert("{number}")
+#    key(shift-g)
+#    insert("yy")
+#    insert("'z")
+#    key(p)
 
 
 
@@ -129,14 +119,10 @@ state output: "OUTPUT: "
 state examples: "EGS: "
 state algo: "ALGO: \n"
 
-from import:
-    insert(' from  ""')
-    key("left")
+#dot for each: ".forEach("
 
-dot for each: ".forEach("
-
-dot split: ".split("
-dot split to chars: ".split('')"
+#dot split: ".split("
+#dot split to chars: ".split('')"
 
 dot to upper case: ".toUpperCase()"
 dot to lower case: ".toLowerCase()"
