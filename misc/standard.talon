@@ -3,16 +3,6 @@ dot talon: ".talon"
 sync dpt: "dptrp1 sync "/Users/ymh/Dropbox/Sony Reader Sync" Document/sync"
 haskell tag: "Haskell:  "
 
-zoom in: edit.zoom_in()
-zoom out: edit.zoom_out()
-
-scroll up: edit.page_up()
-scroll down: edit.page_down()
-
-cop it: edit.copy() # lol move this to generic_editor?
-cut it: edit.cut()
-paste it: edit.paste() 
-
 
 
 
@@ -24,10 +14,8 @@ witcher: key(ctrl-space)
 #switcher: key(alt-p)
 # for Contexts app
 
-nope that: edit.undo()
-redo that: edit.redo()
 paste match: edit.paste_match_style()
-save it: edit.save()
+
 
 screen area: key(cmd-ctrl-shift-4)
 
@@ -43,7 +31,7 @@ arg wrap:
 brace wrap: 
   insert("{")
   edit.line_end()
-  insert("}")
+  insert("}")      
 
 padder: 
   insert("  ") 
