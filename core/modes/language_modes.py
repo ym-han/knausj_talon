@@ -19,7 +19,6 @@ language_extensions = {
     # 'elm': 'elm',
     "gdb": "gdb",
     "go": "go",
-    "haskell": "hs",
     # 'html': 'html',
     "java": "java",
     "javascript": "js",

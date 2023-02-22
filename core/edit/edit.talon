@@ -208,10 +208,6 @@ copy (step | word right):
     edit.extend_word_right()
     edit.copy()
 
-copy word:
-    edit.select_word()
-    edit.copy()
-
 copy line:
     edit.select_line()
     edit.copy()

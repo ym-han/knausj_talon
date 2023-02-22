@@ -1,34 +1,20 @@
-tag: user.haskell
+mode: command
+and mode: user.haskell
+mode: command
+and mode: user.auto_lang
+and code.language: haskell
 -
-tag(): user.code_function
-tag(): user.code_library
-tag(): user.code_operator
-tag(): user.code_type
+tag(): user.code_operators
+tag(): user.code_comment
+tag(): user.code_generic
 
 settings():
-    user.code_function_catch_all = "CAMEL_CASE"
-    user.code_library_catch_all = "CAPITALIZE_ALL_WORDS,DOT_SEPARATED"
-    user.code_type_catch_all = "PASCAL_CASE"
-
-
-# useful commands for adding new cases
-add constructor:
-    edit.line_insert_down()
-    "| "
-
-# special cases for #user.code_type
-type list:
-    "[]"
-    edit.left()
-
-# equivalent of snippet "annotated expression"
-has type <user.code_type>$: " :: {code_type}"
-
-has type <user.code_type> over: " :: {code_type}"
-
-into {user.code_type}:
-    user.insert_cursor(" -> {code_type}[|]")
-
+    user.code_private_function_formatter = "PRIVATE_CAMEL_CASE"
+    user.code_protected_function_formatter = "PRIVATE_CAMEL_CASE"
+    user.code_public_function_formatter = "PRIVATE_CAMEL_CASE"
+    user.code_private_variable_formatter = "PRIVATE_CAMEL_CASE"
+    user.code_protected_variable_formatter = "PRIVATE_CAMEL_CASE"
+    user.code_public_variable_formatter = "PRIVATE_CAMEL_CASE"
 
 pragma scoped type variables: "{-# LANGUAGE ScopedTypeVariables #-}"
 pragma type applications: "{-# LANGUAGE TypeApplications #-}"
@@ -44,6 +30,19 @@ modulo: " mod "
 
 (into | op into): " -> "
 
+## Function type signatures
+is type {user.code_type}:
+    user.insert_cursor(" :: {code_type}[|]")
+into {user.code_type}:
+    user.insert_cursor(" -> {code_type}[|]")
+
+## Function bodies
+body <user.text>: user.haskell_function_body(text)
+
+
+^funky <user.text>$: user.code_default_function(text)
+^pro funky <user.text>$: user.code_protected_function(text)
+^pub funky <user.text>$: user.code_public_function(text)
 
 state first: "fst"
 state second: "snd"
