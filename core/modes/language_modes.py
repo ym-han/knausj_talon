@@ -13,7 +13,7 @@ language_extensions = {
     "c": "c h",
     # 'cmake': 'cmake',
     # 'cplusplus': 'cpp hpp',
-    "csharp": "cs",
+    "csharp":s "cs",
     "css": "css",
     # 'elisp': 'el',
     # 'elm': 'elm',
@@ -27,7 +27,7 @@ language_extensions = {
     # 'lua': 'lua',
     "markdown": "md",
     # 'perl': 'pl',
-    "php": "php",
+    # "php": "php",
     # 'powershell': 'ps1',
     "python": "py",
     "protobuf": "proto",
@@ -51,11 +51,11 @@ language_extensions = {
 # name is used directly.
 language_name_overrides = {
     "cplusplus": ["see plus plus"],
-    "csharp": ["see sharp"],
+    # "csharp": ["see sharp"],
     "css": ["c s s"],
     "gdb": ["g d b"],
-    "go": ["go", "go lang", "go language"],
-    "r": ["are language"],
+    # "go": ["go", "go lang", "go language"],
+    "r": ["are lang", "are language"],
 }
 mod.list("language_mode", desc="Name of a programming language mode.")
 ctx.lists["self.language_mode"] = {
