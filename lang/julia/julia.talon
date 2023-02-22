@@ -265,8 +265,8 @@ geom ribbon: "geom_ribbon"
 geom segment: "geom_segment"
 
 geom smooth: "geom_smooth"
-geom smooth gam: "geom_smooth(method="gam", formula = y ~ ) 
-geom smooth lm: "geom_smooth(method="lm", formula = y ~ ) 
+geom smooth gam: """geom_smooth(method="gam", formula = y ~ )"""
+geom smooth lm: """"geom_smooth(method="lm", formula = y ~ )"""
 geom smooth s e false: "geom_smooth(se=false)"
 s e equals false: "se=false"
 theme no legend: 'theme(legend.position = "none"'

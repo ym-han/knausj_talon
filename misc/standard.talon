@@ -1,10 +1,9 @@
 semi space: "; "
 dot talon: ".talon"
-sync dpt: "dptrp1 sync "/Users/ymh/Dropbox/Sony Reader Sync" Document/sync"
+sync dpt: """dptrp1 sync "/Users/ymh/Dropbox/Sony Reader Sync" Document/sync"""
 haskell tag: "Haskell:  "
 
-
-
+talon log path: "/Users/ymh/.talon/talon.log"
 
 slow mode: mode.enable("user.slow")
 fast mode: mode.disable("user.slow")

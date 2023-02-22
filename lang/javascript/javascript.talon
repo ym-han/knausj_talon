@@ -88,7 +88,7 @@ vee go <number>:
     insert("{number}")
     key(shift-g) 
 
-vee back: ctrl-o
+#vee back: key(ctrl-o)
 
 #copy <number>:  
 #    key(esc)
