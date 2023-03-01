@@ -89,14 +89,21 @@ zen mode:
     user.vscode("workbench.action.closePanel")
 
 # File Commands
-file hunt [<user.text>]:
+dock [<user.text>] [{user.file_extension}] [stop]:
     user.vscode("workbench.action.quickOpen")
-    sleep(50ms)
+    sleep(400ms)
     insert(text or "")
-file hunt (pace | paste):
+    insert(file_extension or "")
+    sleep(300ms)
+
+dock clip:
     user.vscode("workbench.action.quickOpen")
-    sleep(50ms)
+    sleep(400ms)
     edit.paste()
+    sleep(300ms)
+    key(enter)
+    sleep(150ms)
+
 file copy name: user.vscode("fileutils.copyFileName")
 file copy path: user.vscode("copyFilePath")
 file copy local [path]: user.vscode("copyRelativeFilePath")
@@ -149,7 +156,7 @@ ref last:
     user.vscode("references-view.tree.focus")
     key(up enter)
 
-#code navigation
+# Code navigation
 (go declaration | follow): user.vscode("editor.action.revealDefinition")
 go back: user.vscode("workbench.action.navigateBack")
 go forward: user.vscode("workbench.action.navigateForward")
