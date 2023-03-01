@@ -75,7 +75,7 @@ zoom out: edit.zoom_out()
 
 slurp: edit.line_insert_up()
 
-slap: edit.line_insert_down()
+pour: edit.line_insert_down()
 
 dup line: edit.line_clone()
 
