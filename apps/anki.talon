@@ -10,35 +10,48 @@ bad card: key(1)
 
 show history: key(cmd-shift-h)
 
-# this is set to paste python code by default
-paste code: 
+paste haskell: 
+  key(alt-s)
+  sleep(20ms)
+  insert("select")
+  key(enter)
+  sleep(50ms)
+  insert("has")
+  sleep(50ms)
+  key(enter)
+
+paste python: 
   key(alt-s)
   insert("py")
   key(enter)
 
 
-paste jay code: 
+paste j s: 
   key(alt-s)
+  sleep(20ms)
   key(down:2)
+  sleep(20ms)
   key(right)
   insert("j")
   key(enter)
 
-paste julia code: 
+paste julia: 
   key(alt-s)
-  insert("Select from")
+  sleep(20ms)
+  insert("sel")
   key(enter)
-  sleep(300ms)
+  sleep(50ms)
   insert("Julia")
+  sleep(50ms)
   key(enter)
 
-paste custom language code: key(alt-s)
+paste custom lang: key(alt-s)
 
 haskell evaluate: "Haskell: What does the following evaluate to?\n\n"
 jay evaluate: "Javascript: What does the following evaluate to?\n\n"
 jay output: "Javascript: What will the following code output?\n\n"
-launch school tag: "Launch School:  "
-jay tag: "Javascript:  "
+pref launch school: "Launch School:  "
+pref j s: "Javascript:  "
 
 one twenty tag: "JS120:  "
 
