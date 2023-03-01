@@ -13,7 +13,8 @@ mode: all
 #    user.mouse_sleep()
 #    speech.disable()
 #    user.engine_sleep()
-^drowsy [<phrase>]$: speech.disable()
+drowse [<phrase>]$: speech.disable()
+drowse <phrase> resume$: skip()
 ^talon wake$: speech.enable()
 
 key(cmd-alt-shift-s): speech.toggle()
