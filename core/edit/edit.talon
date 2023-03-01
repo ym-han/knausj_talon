@@ -148,7 +148,7 @@ wipe (step | word right):
     edit.extend_word_right()
     edit.delete()
 
-snip line: edit.delete_line()
+(snip | ex) line: edit.delete_line()
 
 snip up:
     edit.extend_line_up()
