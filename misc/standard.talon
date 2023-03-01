@@ -1,7 +1,9 @@
 semi space: "; "
 dot talon: ".talon"
 sync dpt: """dptrp1 sync "/Users/ymh/Dropbox/Sony Reader Sync" Document/sync"""
-haskell tag: "Haskell:  "
+
+pref haskell: "Haskell: "
+pref yak shaving: "Yak shaving: "
 
 talon log path: "/Users/ymh/.talon/talon.log"
 
