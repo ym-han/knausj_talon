@@ -9,6 +9,12 @@ tag(): user.splits
 tag(): user.tabs
 tag(): terminal
 
+
+# inspiration: https://github.com/pokey/pokey_talon/blob/7b0f05c07ac651655546c46b071fa3cdf77bc832/apps/vscode/vscode.talon
+
+
+cross it: user.split_next()
+
 window reload: user.vscode("workbench.action.reloadWindow")
 window close: user.vscode("workbench.action.closeWindow")
 #multiple_cursor.py support end
@@ -24,8 +30,12 @@ bar outline: user.vscode("outline.focus")
 bar run: user.vscode("workbench.view.debug")
 bar search: user.vscode("workbench.view.search")
 bar source: user.vscode("workbench.view.scm")
+list wreck: user.vscode("pr:github.focus")
 bar test: user.vscode("workbench.view.testing.focus")
-bar switch: user.vscode("workbench.action.toggleSidebarVisibility")
+side dog: user.vscode("workbench.action.toggleSidebarVisibility")
+search next: user.vscode("search.action.focusNextSearchResult")
+search last: user.vscode("search.action.focusPreviousSearchResult")
+bar collapse: user.vscode("workbench.files.action.collapseExplorerFolders")
 
 # Symbol search
 symbol hunt [<user.text>]:
@@ -38,20 +48,27 @@ symbol hunt all [<user.text>]:
     sleep(50ms)
     insert(text or "")
 
+symbol last: user.vscode("gotoNextPreviousMember.previousMember")
+symbol next: user.vscode("gotoNextPreviousMember.nextMember")
+
 # Panels
 panel control: user.vscode("workbench.panel.repl.view.focus")
 panel output: user.vscode("workbench.panel.output.focus")
 panel problems: user.vscode("workbench.panel.markers.view.focus")
 panel toggle: user.vscode("workbench.action.togglePanel")
-panel terminal: user.vscode("workbench.action.terminal.focus")
-edits: user.vscode("workbench.action.focusActiveEditorGroup")
+term show: 
+    user.vscode("workbench.action.terminal.focus")
+    sleep(200ms)
+pan edit: user.vscode("workbench.action.focusActiveEditorGroup")
 
 move panel right: key(cmd-alt-ctrl-right)
 move panel left: key(cmd-alt-ctrl-left)
 
 
 # Settings
-show settings: user.vscode("workbench.action.openGlobalSettings")
+show settings:  
+    sleep(50ms)
+    user.vscode("workbench.action.openGlobalSettings")
 show settings json: user.vscode("workbench.action.openSettingsJson")
 show settings folder: user.vscode("workbench.action.openFolderSettings")
 show settings folder json: user.vscode("workbench.action.openFolderSettingsFile")
@@ -125,6 +142,13 @@ language switch: user.vscode("workbench.action.editor.changeLanguageMode")
 refactor rename: user.vscode("editor.action.rename")
 refactor this: user.vscode("editor.action.refactor")
 
+ref next:
+    user.vscode("references-view.tree.focus")
+    key(down enter)
+ref last:
+    user.vscode("references-view.tree.focus")
+    key(up enter)
+
 #code navigation
 (go declaration | follow): user.vscode("editor.action.revealDefinition")
 go back: user.vscode("workbench.action.navigateBack")
@@ -144,6 +168,7 @@ show marks: user.vscode("workbench.view.extension.bookmarks")
 mark toggle: user.vscode("bookmarks.toggle")
 mark next: user.vscode("bookmarks.jumpToNext")
 mark prev: user.vscode("bookmarks.jumpToPrevious")
+go edit: user.vscode("workbench.action.navigateToLastEditLocation")
 
 close other tabs: user.vscode("workbench.action.closeOtherEditors")
 close all tabs: user.vscode("workbench.action.closeAllEditors")
