@@ -11,11 +11,30 @@ settings():
     user.code_type_catch_all = "PASCAL_CASE"
 
 
+dot hs: ".hs"
+
+
+common pragmas: "{-# LANGUAGE LambdaCase, GeneralizedNewtypeDeriving, OverloadedStrings, TypeApplications, ExistentialQuantification, UnicodeSyntax, NegativeLiterals #-}"
 pragma scoped type variables: """{-# LANGUAGE ScopedTypeVariables #-}"""
+pragma lambda case: """{-# LANGUAGE LambdaCase #-}"""
+pragma overloaded strings: """{-# LANGUAGE OverloadedStrings #-}"""
 pragma type applications: """{-# LANGUAGE TypeApplications #-}"""
+pragma type applications: """{-# LANGUAGE TypeFamilies #-}"""
+pragma unicode syntax: """{-# LANGUAGE UnicodeSyntax #-}"""
+pragma existential quantification: """{-# LANGUAGE ExistentialQuantification #-}"""
+pragma stand alone deriving: """{-# LANGUAGE StandaloneDeriving #-}"""
 
 set type applications: ":set -XTypeApplications\n"
 set print for all: ":set -fprint-explicit-foralls\n"
+
+module where: 
+    insert("module  where")
+    key(left:6)
+
+
+import text: "import Data.Char qualified as Char\nimport Data.Text qualified as T\n"
+import data map: "import qualified Data.Map as M"
+
 
 modulo: " mod "
 
@@ -24,6 +43,8 @@ modulo: " mod "
 (spread | state spread): ".."
 
 (into | op into): " -> "
+
+state ghci: "ghci"
 
 
 # useful commands for adding new cases
@@ -42,7 +63,7 @@ type list:
 has type$: " :: "
 ## TO DO for future: too tired to do this properly right now
 
-#has type <user.code_type>$: " :: {code_type}"
+#has type <user.code_type>: " :: {code_type}"
 
 #has type <user.code_type> over: " :: {code_type}"
 
@@ -56,5 +77,4 @@ put string line: "putStrLn"
 
 mappend: "<>"
 
-import text: "import Data.Char qualified as Char\nimport Data.Text qualified as T\n"
 
