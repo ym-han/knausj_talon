@@ -216,18 +216,22 @@ copy line:
 copy head:
     edit.extend_line_start()
     edit.copy()
+    key(right)
 
 copy tail:
     edit.extend_line_end()
     edit.copy()
+    key(left)
 
 copy header:
     edit.extend_file_start()
     edit.copy()
+    key(right)
 
 copy tailor:
     edit.extend_file_end()
     edit.copy()
+    key(left)
 
 
 # Cut
