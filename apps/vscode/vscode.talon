@@ -14,6 +14,7 @@ tag(): terminal
 
 
 cross it: user.split_next()
+# hmm, not sure why this isn't working?
 
 window reload: user.vscode("workbench.action.reloadWindow")
 window close: user.vscode("workbench.action.closeWindow")
@@ -37,6 +38,7 @@ search next: user.vscode("search.action.focusNextSearchResult")
 search last: user.vscode("search.action.focusPreviousSearchResult")
 bar collapse: user.vscode("workbench.files.action.collapseExplorerFolders")
 
+
 # Symbol search
 symbol hunt [<user.text>]:
     user.vscode("workbench.action.gotoSymbol")
@@ -50,6 +52,7 @@ symbol hunt all [<user.text>]:
 
 symbol last: user.vscode("gotoNextPreviousMember.previousMember")
 symbol next: user.vscode("gotoNextPreviousMember.nextMember")
+
 
 # Panels
 panel control: user.vscode("workbench.panel.repl.view.focus")
@@ -104,27 +107,27 @@ dock clip:
     key(enter)
     sleep(150ms)
 
-file copy name: user.vscode("fileutils.copyFileName")
-file copy path: user.vscode("copyFilePath")
-file copy local [path]: user.vscode("copyRelativeFilePath")
-file create sibling: user.vscode_and_wait("explorer.newFile")
-file create: user.vscode("workbench.action.files.newUntitledFile")
-file create relative: user.vscode("fileutils.newFile")
-file create root: user.vscode("fileutils.newFileAtRoot")
-file rename:
+(dock | dog) copy name: user.vscode("fileutils.copyFileName")
+(dock | dog) copy path: user.vscode("copyFilePath")
+(dock | dog) copy local [path]: user.vscode("copyRelativeFilePath")
+(dock | dog) make sibling: user.vscode_and_wait("explorer.newFile")
+(dock | dog) make: user.vscode("workbench.action.files.newUntitledFile")
+(dock | dog) make relative: user.vscode("fileutils.newFile")
+(dock | dog) make root: user.vscode("fileutils.newFileAtRoot")
+(dock | dog) rename:
     user.vscode("fileutils.renameFile")
     sleep(150ms)
-file move:
+(dock | dog) move:
     user.vscode("fileutils.moveFile")
     sleep(150ms)
-file clone:
+(dock | dog) clone:
     user.vscode("fileutils.duplicateFile")
     sleep(150ms)
-file delete:
+(dock | dog) delete:
     user.vscode("fileutils.removeFile")
     sleep(150ms)
-file open folder: user.vscode("revealFileInOS")
-file reveal: user.vscode("workbench.files.action.showActiveFileInExplorer")
+(dock | dog) open folder: user.vscode("revealFileInOS")
+(dock | dog) reveal: user.vscode("workbench.files.action.showActiveFileInExplorer")
 save ugly: user.vscode("workbench.action.files.saveWithoutFormatting")
 
 # Language Features
@@ -169,6 +172,10 @@ go recent [<user.text>]:
     insert(text or "")
     sleep(250ms)
 go edit: user.vscode("workbench.action.navigateToLastEditLocation")
+
+show all files: user.vscode("workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup")
+
+
 
 # Bookmarks. Requires Bookmarks plugin
 show marks: user.vscode("workbench.view.extension.bookmarks")
