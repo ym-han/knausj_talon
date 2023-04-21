@@ -40,12 +40,12 @@ bar collapse: user.vscode("workbench.files.action.collapseExplorerFolders")
 
 
 # Symbol search
-symbol hunt [<user.text>]:
+symbol search [<user.text>]:
     user.vscode("workbench.action.gotoSymbol")
     sleep(50ms)
     insert(text or "")
 
-symbol hunt all [<user.text>]:
+symbol search all [<user.text>]:
     user.vscode("workbench.action.showAllSymbols")
     sleep(50ms)
     insert(text or "")
@@ -134,7 +134,11 @@ save ugly: user.vscode("workbench.action.files.saveWithoutFormatting")
 suggest show: user.vscode("editor.action.triggerSuggest")
 hint show: user.vscode("editor.action.triggerParameterHints")
 def show: user.vscode("editor.action.revealDefinition")
+# editor.action.revealDefinition == Go to Definition
+# also have `follow` for this
+
 def peek: user.vscode("editor.action.peekDefinition")
+
 def side: user.vscode("editor.action.revealDefinitionAside")
 references show: user.vscode("editor.action.goToReferences")
 hierarchy peek: user.vscode("editor.showCallHierarchy")
@@ -145,7 +149,8 @@ imports fix: user.vscode("editor.action.organizeImports")
 problem next: user.vscode("editor.action.marker.nextInFiles")
 problem prev: user.vscode("editor.action.marker.prevInFiles")
 problem fix: user.vscode("problems.action.showQuickFixes")
-rename that: user.vscode("editor.action.rename")
+rename that: user.vscode("editor.action.rename") 
+# this is rename symbol
 refactor that: user.vscode("editor.action.refactor")
 trim whitespace: user.vscode("editor.action.trimTrailingWhitespace")
 language switch: user.vscode("workbench.action.editor.changeLanguageMode")
@@ -297,6 +302,7 @@ minimap: user.vscode("editor.action.toggleMinimap")
 maximize: user.vscode("workbench.action.minimizeOtherEditors")
 restore: user.vscode("workbench.action.evenEditorWidths")
 
+# TO DO: Add more here!
 #breadcrumb
 select breadcrumb: user.vscode("breadcrumbs.focusAndSelect")
 # Use `alt-left` and `alt-right` to navigate the bread crumb
