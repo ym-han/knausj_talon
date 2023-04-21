@@ -4,6 +4,9 @@ sync dpt: """dptrp1 sync "/Users/ymh/Dropbox/Sony Reader Sync" Document/sync"""
 
 pref haskell: "Haskell: "
 pref yak shaving: "Yak shaving: "
+pref talon binding: "Talon voice binding:\n"
+pref rango binding: "Talon voice binding -- Rango:\n"
+tag rango talon: "rango-talon"
 
 talon log path: "/Users/ymh/.talon/talon.log"
 
