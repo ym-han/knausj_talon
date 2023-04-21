@@ -32,7 +32,7 @@ arg wrap:
   edit.line_end()
   insert(")")
 
-skis wrap:
+(skis | ber tick) wrap:
   edit.line_start()
   insert("`")
   edit.line_end()

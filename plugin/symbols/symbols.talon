@@ -1,3 +1,4 @@
+new line: "\n"
 double dash: "--"
 triple quote: "'''"
 (triple grave | triple back tick | gravy): insert("```")
@@ -6,7 +7,7 @@ ellipses: "..."
 (comma and | spamma): ", "
 arrow: "->"
 dub arrow: "=>"
-new line: "\\n"
+
 carriage return: "\\r"
 line feed: "\\r\\n"
 
@@ -14,7 +15,7 @@ empty round: "()"
 empty square: "[]"
 empty curly: "{}"
 empty diamond: "<>"
-empty quad: '""'
+empty quad: user.insert_between('"', '"')
 empty twin: "''"
 empty escaped quad: '\\"\\"'
 empty escaped twin: "\\'\\'"
@@ -62,7 +63,7 @@ twin that:
 (quad | dub quote) that:
     text = edit.selected_text()
     user.paste('"{text}"')
-(ber tick | back tick) that:
+(ber tick | back tick | skis) that:
     text = edit.selected_text()
     user.paste("`{text}`")
 

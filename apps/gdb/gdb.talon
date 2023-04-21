@@ -73,14 +73,12 @@ disable display <number_small>: "disable display {number_small}\n"
 undisplay: "undisplay\n"
 
 # variables
-(list|show|info) local: "info local "
-(list|show|info) local typed: "info local -t "
-(list|show|info) variable: "info variable "
-(list|show|info) variable typed: "info variable -t "
-(list|show|info) locals: "info local\n"
-(list|show|info) variables: "info variables\n"
-frame <number_small>: "frame {number_small}"
-
+(list | show | info) local: "info local "
+(list | show | info) local typed: "info local -t "
+(list | show | info) variable: "info variable "
+(list | show | info) variable typed: "info variable -t "
+(list | show | info) locals: "info local\n"
+(list | show | info) variables: "info variables\n"
 
 # threads
 info threads: "info threads\n"
@@ -91,7 +89,6 @@ back trace: "bt\n"
 debug quit: "quit\n"
 # more quickly quit when there are inferiors
 debug force quit: "quit\ny\n"
-(show | info) (inf | inferiors): "info inferiors\n"
 inferior <number_small>$: "inferior {number_small}\n"
 inferior: "inferior "
 resume main (inf | inferior):

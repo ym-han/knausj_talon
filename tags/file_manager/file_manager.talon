@@ -28,9 +28,8 @@ go forward: user.file_manager_go_forward()
 ^(select | cell) file {user.file_manager_files}$:
     user.file_manager_select_file(file_manager_files)
 
-#folder new
-new folder <user.text>: 
-    user.file_manager_new_folder(text)
+#new folder
+folder new <user.text>: user.file_manager_new_folder(text)
 
 #show properties
 properties show: user.file_manager_show_properties()
@@ -38,9 +37,9 @@ properties show: user.file_manager_show_properties()
 # open terminal at location
 new term here: user.file_manager_terminal_here()
 
-next folder: user.file_manager_next_folder_page()
-prev folder: user.file_manager_previous_folder_page()
+folder next: user.file_manager_next_folder_page()
+folder prev: user.file_manager_previous_folder_page()
 
-next file: user.file_manager_next_file_page()
-prev file: user.file_manager_previous_file_page()
+file next: user.file_manager_next_file_page()
+file prev: user.file_manager_previous_file_page()
 

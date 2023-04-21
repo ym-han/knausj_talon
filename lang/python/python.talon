@@ -57,8 +57,7 @@ dock string: user.code_comment_documentation()
 
 dot items: ".items("
 
-dock string:
-    user.code_comment_documentation()
+dock string: user.code_comment_documentation()
 dock {user.python_docstring_fields}:
     insert("{python_docstring_fields}")
     edit.left()

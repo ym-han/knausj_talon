@@ -183,11 +183,6 @@ show all files: user.vscode("workbench.action.quickOpenPreviousRecentlyUsedEdito
 
 
 # Bookmarks. Requires Bookmarks plugin
-show marks: user.vscode("workbench.view.extension.bookmarks")
-mark toggle: user.vscode("bookmarks.toggle")
-mark next: user.vscode("bookmarks.jumpToNext")
-mark prev: user.vscode("bookmarks.jumpToPrevious")
-go edit: user.vscode("workbench.action.navigateToLastEditLocation")
 
 close other tabs: user.vscode("workbench.action.closeOtherEditors")
 close all tabs: user.vscode("workbench.action.closeAllEditors")
