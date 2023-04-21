@@ -156,7 +156,7 @@ punctuation_words = {
     # "grave": "`",
     "comma": ",",
     # Workaround for issue with conformer b-series; see #946
-    "coma": ",",
+    #"coma": ",",
     "period": ".",
     "full stop": ".",
     "semicolon": ";",
@@ -188,13 +188,13 @@ symbol_key_words = {
     "down score": "_",
     "leper": "(",
     "reper": ")",
-    "brace": "{",
+    "bracey": "{",
     "R brace": "}",
-    "angle": "<",
+    "sym angle": "<",
     "less than": "<",
     "greater than": ">",
     
-    "rangle": ">",
+    "sym rangle": ">",
     "starry": "*",
     "pound": "#",
     # "percent": "%",
@@ -205,11 +205,12 @@ symbol_key_words = {
     # Currencies
     "dollar sign": "$",
 }
-
+ 
  
 only_for_saran = {
     "big arrow": "=>",
     "arrow": "->",
+    "not equal": "!="
 }
 
  
@@ -236,17 +237,18 @@ simple_keys = [
     # "enter",
     "escape",
     # "home",
-    # "insert",
+    "insert",
     "pagedown",
     "pageup",
     "space",
     "tab it",
-]
-
+]   
+            
 alternate_keys = {
     "wipe": "backspace",
     #"delete": "backspace",
-    #'junk': 'backspace',
+    'junk': 'backspace',
+    "taber": "tab",
     "forward delete": "delete",
     "page up": "pageup",
     "page down": "pagedown",
