@@ -24,12 +24,19 @@ spamma: ", "
 coalgap: ": "
 
 arg wrap: 
+  edit.line_start()
   insert("(")
   edit.line_end()
   insert(")")
 
+skis wrap:
+  edit.line_start()
+  insert("`")
+  edit.line_end()
+  insert("`")
 
 brace wrap: 
+  edit.line_start()
   insert("{")
   edit.line_end()
   insert("}")      
