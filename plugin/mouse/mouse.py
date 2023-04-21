@@ -276,9 +276,10 @@ def show_cursor_helper(show):
     else:
         ctrl.cursor_visible(show)
 
-
+@ctx.action("user.noise_trigger_pop")
 def on_pop(active):
     if setting_mouse_enable_pop_stops_scroll.get() >= 1 and (gaze_job or scroll_job):
+        # Allow pop to stop scroll
         stop_scroll()
     elif not actions.tracking.control_zoom_enabled():
         if setting_mouse_enable_pop_click.get() >= 1:
