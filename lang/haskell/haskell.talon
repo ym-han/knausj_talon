@@ -13,16 +13,17 @@ settings():
 
 dot hs: ".hs"
 
+common pragmas: "{{-# LANGUAGE LambdaCase, GeneralizedNewtypeDeriving, OverloadedStrings, TypeApplications, ExistentialQuantification, UnicodeSyntax, NegativeLiterals, ImportQualifiedPost #-}}"
+pragma scoped type variables: "{{-# LANGUAGE ScopedTypeVariables #-}}"
+pragma lambda case: "{{-# LANGUAGE LambdaCase #-}}"
+pragma overloaded strings: "{{-# LANGUAGE OverloadedStrings #-}}"
+pragma type applications: "{{-# LANGUAGE TypeApplications #-}}"
+pragma unicode syntax: "{{-# LANGUAGE UnicodeSyntax #-}}"
+pragma existential quantification: "{{-# LANGUAGE ExistentialQuantification #-}}"
 
-common pragmas: "{-# LANGUAGE LambdaCase, GeneralizedNewtypeDeriving, OverloadedStrings, TypeApplications, ExistentialQuantification, UnicodeSyntax, NegativeLiterals, ImportQualifiedPost #-}"
-pragma scoped type variables: """{-# LANGUAGE ScopedTypeVariables #-}"""
-pragma lambda case: """{-# LANGUAGE LambdaCase #-}"""
-pragma overloaded strings: """{-# LANGUAGE OverloadedStrings #-}"""
-pragma type applications: """{-# LANGUAGE TypeApplications #-}"""
-pragma type applications: """{-# LANGUAGE TypeFamilies #-}"""
-pragma unicode syntax: """{-# LANGUAGE UnicodeSyntax #-}"""
-pragma existential quantification: """{-# LANGUAGE ExistentialQuantification #-}"""
-pragma stand alone deriving: """{-# LANGUAGE StandaloneDeriving #-}"""
+
+pragma stand alone deriving: "{{-# LANGUAGE StandaloneDeriving #-}}"
+
 
 set type applications: ":set -XTypeApplications\n"
 set print for all: ":set -fprint-explicit-foralls\n"
