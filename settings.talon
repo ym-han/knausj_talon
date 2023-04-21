@@ -11,6 +11,8 @@ settings():
     # Set the max number of command lines per page in help
     user.help_max_command_lines_per_page = 50
 
+    user.ocr_select_pause_seconds = 0.6
+
     # Set the max number of contexts display per page in help
     user.help_max_contexts_per_page = 30
     
