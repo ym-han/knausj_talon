@@ -2,6 +2,7 @@ tag: terminal
 -
 # tags should be activated for each specific terminal in the respective talon file
 
+cancel it: key(ctrl-c)
 
 # TEMP
 
@@ -9,13 +10,16 @@ docker images: "docker images"
 
 
 # navigation
+l s: "ls"
 
+lisa hidden: "ls -lah\n"
 lisa: user.terminal_list_directories()
 lisa all: user.terminal_list_all_directories()
 
 cd [dir] [<user.text>]: user.terminal_change_directory(text or "")
 cd root: user.terminal_change_directory_root()
-cd up: user.terminal_change_directory("..")
+cd up: "cd..\n"
+#user.terminal_change_directory("..")
 
 go <user.system_path>: insert('cd "{system_path}"\n')
 path <user.system_path>: insert('"{system_path}"')
@@ -73,9 +77,10 @@ pseudo a p t update: "sudo apt-get update"
 pseduo a p t install: "sudo apt install "
 
 
-go to three hundred projects: "cd *projects*\n"
 
 # ==== CS300 related
+go to three hundred projects: "cd *projects*\n"
+
 #three hundred container: "'/Users/ymh/Documents/Git_repos/cs_stuff/cs300_env/cs300-run-docker'"
 
 #remove p b c c: "rm *.pb.cc"
@@ -117,13 +122,18 @@ cabal update: "cabal update"
 cabal install: "cabal install"
 cabal install lib: "cabal install --lib "
 cabal init: "cabal init"
+cabal help init: "cabal help init"
 cabal init interactive: "cabal init --interactive"
-cabal build: "cabal build "
+cabal build: "cabal build " 
+cabal build lib: "cabal build lib:" 
+cabal build exe: "cabal build exe:" 
 cabal repl: "cabal repl "
 cabal exec: "cabal exec "
 cabal run: "cabal run "
 cabal help: "cabal help "
 
+edit cabal: "code *.cabal"
+edit cabal in sublime: "subl *.cabal"
 
 # === JAVASCRIPT related
 
@@ -192,12 +202,6 @@ oscar gpt workspace:
     insert("source /users/yh31/scratch/envs/gptexps/bin/activate\n")
     insert("module load julia/1.7.2\n")
     insert("cd /users/yh31/scratch/projects/gpt_exps\n")
-
-oscar lizards workspace:
-    insert("module load python/3.7.4\n")
-    insert("source /users/yh31/scratch/envs/lizard-env/bin/activate\n")
-    insert("cd /users/yh31/scratch/projects/MultiAgent-PositronicLizards/lizards\n")
-
 
 
 eye python: "ipython3"
