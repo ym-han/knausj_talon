@@ -12,7 +12,7 @@ def setup_default_alphabet():
     initial_default_alphabet_dict = dict(
         zip(initial_default_alphabet, initial_letters_string)
     )
-
+    
     return initial_default_alphabet_dict
 
 
@@ -130,7 +130,8 @@ def letters(m) -> str:
 ctx = Context()
 modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
-    "alt": "alt",  #'alter': 'alt',
+    "alt": "alt",  
+    #'alter': 'alt',
     "control": "ctrl",  #'troll':   'ctrl',
     "shift": "shift",  #'sky':     'shift',
     "super": "super",
@@ -218,15 +219,16 @@ saranable_key_words.update( {binding: f" {symbol} " for binding, symbol in only_
 symbol_key_words.update(punctuation_words)
 ctx.lists["self.punctuation"] = punctuation_words
 ctx.lists["self.symbol_key"] = symbol_key_words
-ctx.lists["self.saranable_key"] = saranable_key_words
-
-ctx.lists["self.number_key"] = dict(zip(default_digits, numbers))
+ctx.lists["self.number_key"] = {name: str(i) for i, name in enumerate(digits)}
 ctx.lists["self.arrow_key"] = {
     "down": "down",
     "left": "left",
     "right": "right",
     "up": "up",
 }
+
+ctx.lists["self.saranable_key"] = saranable_key_words
+
 
 simple_keys = [
     # "end",
