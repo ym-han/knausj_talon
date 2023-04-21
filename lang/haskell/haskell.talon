@@ -14,7 +14,7 @@ settings():
 dot hs: ".hs"
 
 
-common pragmas: "{-# LANGUAGE LambdaCase, GeneralizedNewtypeDeriving, OverloadedStrings, TypeApplications, ExistentialQuantification, UnicodeSyntax, NegativeLiterals #-}"
+common pragmas: "{-# LANGUAGE LambdaCase, GeneralizedNewtypeDeriving, OverloadedStrings, TypeApplications, ExistentialQuantification, UnicodeSyntax, NegativeLiterals, ImportQualifiedPost #-}"
 pragma scoped type variables: """{-# LANGUAGE ScopedTypeVariables #-}"""
 pragma lambda case: """{-# LANGUAGE LambdaCase #-}"""
 pragma overloaded strings: """{-# LANGUAGE OverloadedStrings #-}"""
