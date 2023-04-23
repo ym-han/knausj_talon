@@ -247,7 +247,8 @@ coord cartesian: "coor_cartesian"
 element text: "element_text"
 element blank: "element_blank"
 facet grid: "facet_grid"
-facet wrap: "facet_wrap"
+facet wrap: "facet_wrap(~"
+
 geom A B line: "geom_abline"
 geom area: "geom_area"
 geom bar: "geom_bar"
@@ -298,6 +299,5 @@ ggplot scatter facet:
           facet_wrap(~)"""
 
 
-facet wrap: "facet_wrap(~"
 
 

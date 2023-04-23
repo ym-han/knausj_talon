@@ -53,7 +53,6 @@ for index <user.text> enumerate: insert("for idx, {text} in enumerate(")
     user.insert_between("raise {python_exception}(", ")")
 [state] except {user.python_exception}: "except {python_exception}:"
 
-dock string: user.code_comment_documentation()
 
 dot items: ".items("
 
