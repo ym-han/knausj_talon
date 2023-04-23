@@ -1,7 +1,7 @@
 # Adapted from Wen Kokke's scripts (https://github.com/wenkokke/talon-user/blob/78bf5c91333d628481e8f386ff3f454b224c6402/code/haskell/haskell.py#L9)
 from talon import Context, Module, actions
 
-from user.util import csv
+from ...util import csv
 
 mod = Module()
 

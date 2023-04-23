@@ -1,6 +1,7 @@
+# Adapted from Wen Kokke's scripts
 from talon import Context, Module
 
-from user.util import csv
+from ....util import csv
 
 mod = Module()
 mod.tag("code_operator", desc="Tag which provides a general list for operators")
