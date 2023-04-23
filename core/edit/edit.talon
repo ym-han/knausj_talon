@@ -7,21 +7,18 @@
 scout it: edit.find()
 
 scout next: edit.find_next()
-
 scout prev: edit.find_previous()
 
 
 # Save 
 
 save it: edit.save()
-
 file save all: edit.save_all()
 
 
 # Undo/Redo 
 
 nope that: edit.undo()
-
 redo: edit.redo()
 
 
@@ -37,36 +34,29 @@ redo: edit.redo()
 
 
 goal: edit.left()
-
 gore: edit.right()
 
 goop: edit.up()
-
 gown: edit.down()
 
 
 moon: edit.word_left()
-
 step: edit.word_right()
 
 head: edit.line_start()
-
 tail: edit.line_end()
 
 
 page up: edit.page_up()
-
 page down: edit.page_down()
 
 header: edit.file_start()
-
 tailor: edit.file_end()
 
 
 # Zoom
 
 zoom in: edit.zoom_in()
-
 zoom out: edit.zoom_out()
 
 
@@ -74,11 +64,9 @@ zoom out: edit.zoom_out()
 # Insert
 
 slurp: edit.line_insert_up()
-
 pour: edit.line_insert_down()
 
 dup line: edit.line_clone()
-
 dup it: edit.selection_clone()
 
 
@@ -88,37 +76,29 @@ dup it: edit.selection_clone()
 cork: edit.select_none()
 
 grab up: edit.extend_up()
-
 grab down: edit.extend_down()
 
 grab left: edit.extend_left()
-
 grab right: edit.extend_right()
 
 
 take word: edit.select_word()
-
 take line: edit.select_line()
 
 
 grab (moon | word left): edit.extend_word_left()
-
 grab (step | word right): edit.extend_word_right()
-
 
 
 select all: edit.select_all()
 
 
-
 select up: edit.extend_line_up()
-
 select down: edit.extend_line_down()
 
 
 
 grab head: edit.extend_line_start()
-
 grab tail: edit.extend_line_end()
 
 
