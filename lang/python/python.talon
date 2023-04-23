@@ -126,7 +126,7 @@ equal gap: " = "
 dot drop duplicates: ".drop_duplicates"
 
 dot drop column in place: ".drop(columns='TO ADD', inplace=True)"
-rename column: "df.rename({"colnm": "newcolnm"}, axis=1, inplace=True)
+rename column: 'df.rename({{"colnm": "newcolnm"}}, axis=1, inplace=True)'
 dot rename: ".rename("
 
 dot i lock: ".iloc["
