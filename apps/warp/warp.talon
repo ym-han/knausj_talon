@@ -22,7 +22,7 @@ resume:
     insert("fg")
     key(enter)
 
-hunt all [<user.text>]:
+search all [<user.text>]:
     key(ctrl-r)
     insert(text or "")
 
