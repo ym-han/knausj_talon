@@ -13,6 +13,9 @@ settings():
 
 dot hs: ".hs"
 
+pragma ghc wall: "{{-# OPTIONS_GHC -Wall #-}}"
+# enables all warnings
+
 common pragmas: "{{-# LANGUAGE LambdaCase, GeneralizedNewtypeDeriving, OverloadedStrings, TypeApplications, ExistentialQuantification, UnicodeSyntax, NegativeLiterals, ImportQualifiedPost #-}}"
 pragma scoped type variables: "{{-# LANGUAGE ScopedTypeVariables #-}}"
 pragma lambda case: "{{-# LANGUAGE LambdaCase #-}}"
@@ -39,14 +42,21 @@ import data map: "import qualified Data.Map as M"
 
 modulo: " mod "
 
-(let | state let): "let "
+# ----- Ops -----------------
+op into: " -> "
+op choice: " <|> "
 
-(spread | state spread): ".."
+op mappend: " <> "
 
-(into | op into): " -> "
+op bind: " >>= "
+op reverse bind: " =<< "
+op f map: " <$> "
+op ap: " <*> "
+op ap right: " *> "
+op ap left: " <* "
+op pipe: " |> "
 
-state ghci: "ghci"
-
+state f map: "fmap"
 
 # useful commands for adding new cases
 add constructor:
@@ -72,10 +82,27 @@ has type$: " :: "
 #    user.insert_cursor(" -> {code_type}[|]")
 
 
-state first: "fst"
-state second: "snd"
-put string line: "putStrLn" 
+state let: "let "
 
-mappend: "<>"
+state g h c i: "ghci"
+
+state bool: "Bool"
+state uncurry: "uncurry "
+
+state new type: "newtype "
+state data: "data "
 
 
+state first: "fst "
+state second: "snd "
+put string line: "putStrLn " 
+
+state lift: "lift "
+
+state maybe tee: "MaybeT"
+state either tee: "EitherT"
+state reader tee: "ReaderT"
+
+state return: "return "
+
+state pure: "pure "
