@@ -9,9 +9,37 @@ cancel it: key(ctrl-c)
 docker images: "docker images"
 
 
+broot: "br"
+broot details: "br -sdp\n"
+# FZF
+
+f z f: "fzf"
+pipe fuzzy: " | fzf\n"
+term hist: key(ctrl-r)  
+
+then fuzz: 
+    insert("**")
+    key(tab)
+
+p s fuzzy: 
+    insert("ps aux | fzf")
+    key(enter)
+
+
+vim fuzzy:
+    insert("vim **")
+    key(tab)
+sublime fuzzy:
+    insert("subl **")
+    key(tab)
+code fuzzy:
+    insert("code **")
+    key(tab)
+
+
+
 # navigation
 l s: "ls"
-
 lisa hidden: "ls -lah\n"
 lisa: user.terminal_list_directories()
 lisa all: user.terminal_list_all_directories()
@@ -168,6 +196,28 @@ screen reattach: "screen -r "
 
 
 present dir: "pwd\n"
+
+
+# == CCLAW
+log into claw: 
+    insert("ssh -Y ymhan@cclaw")
+    key(enter)
+claw g sheet: "cd /home/ymhan/repos/gsheet\n"
+claw view: "cd /home/ymhan/repos/vue-pure-pdpa\n"
+
+poetry g server:     
+    insert("cd /home/ymhan/repos/gsheet/natural4-server/natural4_server/; poetry shell")
+    key(enter)
+
+run unicorn: 
+    insert("cd /home/ymhan/repos/gsheet/natural4-server/natural4_server/; gunicorn wsgi:app -c  gunicorn.ym.py")
+    key(enter)
+
+# cd /home/ymhan/repos/gsheet/natural4-server/natural4_server/
+# poetry run gunicorn wsgi:app -c  gunicorn.ym.py
+
+
+
 
 
 # === OSCAR
