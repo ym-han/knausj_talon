@@ -2,6 +2,8 @@ semi space: "; "
 dot talon: ".talon"
 sync dpt: """dptrp1 sync "/Users/ymh/Dropbox/Sony Reader Sync" Document/sync"""
 
+pref mirdin: "Mirdin Software Design:"
+pref clingo: "Clingo: "
 pref haskell: "Haskell: "
 pref yak shaving: "Yak shaving: "
 pref talon binding: "Talon voice binding:\n"
@@ -9,6 +11,8 @@ pref rango binding: "Talon voice binding -- Rango:\n"
 tag rango talon: "rango-talon"
 
 talon log path: "/Users/ymh/.talon/talon.log"
+sublime talon log: "subl /Users/ymh/.talon/talon.log"
+
 
 slow mode: mode.enable("user.slow")
 fast mode: mode.disable("user.slow")
