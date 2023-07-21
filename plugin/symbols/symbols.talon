@@ -4,9 +4,9 @@ triple quote: "'''"
 (triple grave | triple back tick | gravy): insert("```")
 (dot dot | dotdot): ".."
 ellipses: "..."
-(comma and | spamma): ", "
-arrow: "->"
-dub arrow: "=>"
+spamma: ", "
+sym arrow: "->"
+sym dub arrow: "=>"
 
 carriage return: "\\r"
 line feed: "\\r\\n"
@@ -28,7 +28,7 @@ square: user.insert_between("[", "]")
 diamond: user.insert_between("<", ">")
 quad: user.insert_between('"', '"')
 twin: user.insert_between("'", "'")
-ber tick: user.insert_between("`", "`")
+(back | ber) tick: user.insert_between("`", "`")
 
 tween <user.symbol_key>: user.insert_between("{symbol_key}", "{symbol_key}")
 
