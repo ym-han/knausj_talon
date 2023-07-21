@@ -59,10 +59,10 @@ panel control: user.vscode("workbench.panel.repl.view.focus")
 panel output: user.vscode("workbench.panel.output.focus")
 panel problems: user.vscode("workbench.panel.markers.view.focus")
 panel toggle: user.vscode("workbench.action.togglePanel")
-term show: 
+now term: 
     user.vscode("workbench.action.terminal.focus")
     sleep(200ms)
-pan edit: user.vscode("workbench.action.focusActiveEditorGroup")
+now editor: user.vscode("workbench.action.focusActiveEditorGroup")
 
 move panel right: key(cmd-alt-ctrl-right)
 move panel left: key(cmd-alt-ctrl-left)
