@@ -130,8 +130,8 @@ def letters(m) -> str:
 ctx = Context()
 modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
-    "alt": "alt",  
-    #'alter': 'alt',
+    # "alt": "alt",  
+    'alter': 'alt',
     "control": "ctrl",  #'troll':   'ctrl',
     "shift": "shift",  #'sky':     'shift',
     "super": "super",
@@ -155,22 +155,22 @@ punctuation_words = {
     # Workaround for issue with conformer b-series; see #946
     #"coma": ",",
     "period": ".",
-    "full stop": ".",
+    # "full stop": ".",
     "semicolon": ";",
     "colon": ":",
-    "forward slash": "/",
+    "for slash": "/",
     "questo": "?",
     "exclamation mark": "!",
     # "asterisk": "*",
     # "hash sign": "#",
     # "number sign": "#",
-    "percent sign": "%",
+    "sym percent": "%",
     "at sign": "@",
-    "and sign": "&",
+    "sym amp": "&",
 }
 symbol_key_words = {
     "point": ".",
-    "quote": "'",
+    "sym quote": "'",
     "l square": "[",
     # "rack": "]",
     "r square": "]",
@@ -178,8 +178,8 @@ symbol_key_words = {
     "minus": "-",
     "dash": "-",
     "equals": "=",
-    "plus": "+",
-    "grave": "`",
+    "sym plus": "+",
+    # "grave": "`",
     "tilde": "~",
     "bang": "!",
     "down score": "_",
@@ -188,7 +188,7 @@ symbol_key_words = {
     "bracey": "{",
     "R brace": "}",
     "sym angle": "<",
-    "less than": "<",
+    "smaller than": "<",
     "greater than": ">",
     
     "sym rangle": ">",
@@ -197,7 +197,7 @@ symbol_key_words = {
     # "percent": "%",
     # "caret": "^",
     # "amper": "&",
-    # "pipe": "|",
+    "sym pipe": "|",
     "dubquote": '"',
     # Currencies
     "dollar sign": "$",
@@ -205,9 +205,13 @@ symbol_key_words = {
  
  
 only_for_saran = {
-    "big arrow": "=>",
-    "arrow": "->",
-    "not equal": "!="
+    "big arrow":   "=>",
+    "arrow":       "->",
+    "not equal":   "!=",
+    "pipe":        "|",
+    "dollar":      "$",
+    "em dash":     "---", 
+    "starry":      "*"
 }
 
  
@@ -235,7 +239,7 @@ simple_keys = [
     # "enter",
     "escape",
     # "home",
-    "insert",
+    "insert key",
     "pagedown",
     "pageup",
     "space",

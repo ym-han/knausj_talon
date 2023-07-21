@@ -27,7 +27,7 @@ focus termy$:
     user.switcher_focus("Terminal")
     sleep(20ms)
 
-warper$:  
+focus warp$:  
     user.switcher_focus("Warp")
     sleep(20ms)
 

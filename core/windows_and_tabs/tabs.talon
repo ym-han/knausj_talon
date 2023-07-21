@@ -8,4 +8,4 @@ taber (reopen | restore): app.tab_reopen()
   
 go tab <number>: user.tab_jump(number)
 go last tab: user.tab_final()
-duplicate tab: user.tab_duplicate()
+tab duplicate: user.tab_duplicate()

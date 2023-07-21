@@ -55,6 +55,7 @@ language_name_overrides = {
     "cplusplus": ["see plus plus"],
     # "csharp": ["see sharp"],
     "css": ["c s s"],
+    "sql": ["s q l"],
     "gdb": ["g d b"],
     # "go": ["go", "go lang", "go language"],
     "r": ["are lang", "are language"],

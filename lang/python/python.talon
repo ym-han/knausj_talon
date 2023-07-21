@@ -35,11 +35,13 @@ state (def | deaf | deft): "def "
 state try: "try:\n"
 state except: "except "
 state raise: "raise "
-self taught: "self."
+self dot: "self."
+state self: "self"
 pie test: "pytest"
 state past: "pass"
 state enumerate: "enumerate"
 
+state property: "@property"
 
 state description: "descrip"
 
