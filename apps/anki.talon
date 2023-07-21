@@ -15,9 +15,9 @@ paste haskell:
   sleep(20ms)
   insert("select")
   key(enter)
-  sleep(50ms)
+  sleep(20ms)
   insert("has")
-  sleep(50ms)
+  sleep(20ms)
   key(enter)
 
 paste python: 
