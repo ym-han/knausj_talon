@@ -1,5 +1,6 @@
 control mouse legacy: tracking.control1_toggle()
 control mouse: tracking.control_toggle()
+control off: user.mouse_sleep()
 zoom mouse: tracking.control_zoom_toggle()
 camera overlay: tracking.control_debug_toggle()
 calibrate mouse: tracking.calibrate()

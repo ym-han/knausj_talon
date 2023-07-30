@@ -1,27 +1,10 @@
-#os: linux
+os: linux
 # XXX - this matches .gdb files atm
 #win.title: /gdb/
-#tag: terminal
-mode: user.gdb
+tag: terminal
+tag: user.gdb
 -
-tag(): user.gdb
 tag(): user.debugger
-
-layout source: "layout src"
-
-g d b: "gdb -tui"
-
-g d b alone: "gdb "
-
-a pro pos: "apropos "
-
-next: "n\n"
-step into: "s\n"
-
-run existing: "r existing"
-
-set break: "b "
-
 until <number>: "until {number}"
 force clear all break points:
     insert("d br\n")
@@ -89,6 +72,7 @@ back trace: "bt\n"
 debug quit: "quit\n"
 # more quickly quit when there are inferiors
 debug force quit: "quit\ny\n"
+(show | info) (inf | inferiors): "info inferiors\n"
 inferior <number_small>$: "inferior {number_small}\n"
 inferior: "inferior "
 resume main (inf | inferior):
@@ -116,11 +100,3 @@ set list size <number_small>: "set listsize {number_small}\n"
 
 # misc
 clear screen: "shell clear\n"
-
-
-
-show read write new: "p f->rw_new\n"
-show new next index: "p new_next_cache_idx\n"
-show next index: "p f->next_cache_idx\n"
-
-
