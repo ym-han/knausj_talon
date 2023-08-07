@@ -157,6 +157,9 @@ language switch: user.vscode("workbench.action.editor.changeLanguageMode")
 refactor rename: user.vscode("editor.action.rename")
 refactor this: user.vscode("editor.action.refactor")
 
+scout again:                user.vscode("rerunSearchEditorSearch")
+
+
 ref next:
     user.vscode("references-view.tree.focus")
     key(down enter)
@@ -323,7 +326,8 @@ select word: user.vscode("editor.action.addSelectionToNextFindMatch")
 skip word: user.vscode("editor.action.moveSelectionToNextFindMatch")
 
 
-run it: user.vscode("ipython.sendSelectedToIpython")
+run it: key(cmd-enter)
+#user.vscode("ipython.sendSelectedToIpython")
 
 # jupyter
 cell next: user.vscode("jupyter.gotoNextCellInFile")
@@ -364,7 +368,11 @@ magic p run: "%prun"
 magic h t m l: "%% HTML"
 magic matplotlib: "%matplotlib"
 
+# Other extensions
+edit c s v: user.vscode("edit-csv.edit")
 
+# Misc
+copy command id:            user.copy_command_id()
 
-install local: user.vscode("workbench.extensions.action.installVSIX")
+install extension: user.vscode("workbench.extensions.action.installVSIX")
 preview markdown: user.vscode("markdown.showPreview")
