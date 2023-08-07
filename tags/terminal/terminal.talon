@@ -104,10 +104,52 @@ pseudo a p t update: "sudo apt-get update"
 
 pseduo a p t install: "sudo apt install "
 
+# === VSCode
 
+coder folder: "code -n ."
+
+
+# ==== CCLAW DSL dev related
+
+
+go l four: 
+    insert("cdl4")
+    key(enter)
+
+path must sing: "test/examples/mustsing-latest.csv"
+
+l four run: 
+    insert("cdl4")
+    key(enter)
+    insert("stack run -- --workdir=workdir test/examples/")
+
+stack build install: "stack build; stack install"
+
+stack test: 
+    insert("stack test")
+    key(enter)
+
+stack haddock:
+    insert("stack haddock")
+    key(enter)
+
+stack targets: insert("stack ide targets")
+
+repl test: 
+    insert("stack ghci --test")
+    key(enter)
+# natural4:test:natural4-test
+
+load n l g spec: 
+    insert(":l LS.NLGSpec")
+    key(enter)
+
+stack repl: 
+    insert("stack ghci")
+    key(enter)
 
 # ==== CS300 related
-go to three hundred projects: "cd *projects*\n"
+#go to three hundred projects: "cd *projects*\n"
 
 #three hundred container: "'/Users/ymh/Documents/Git_repos/cs_stuff/cs300_env/cs300-run-docker'"
 
@@ -221,17 +263,6 @@ run unicorn:
 
 
 # === OSCAR
-log into oscar: "ssh -Y yh31@ssh.ccv.brown.edu\n"
-
-oscar vpn: "ssh yh31@sshvpn.ccv.brown.edu\n"
-
-log into oscar <number>: 
-    insert("ssh -Y yh31@ssh.ccv.brown.edu\n")
-    sleep(1000ms)
-    insert("interact -t 0{number}:00:00 -m 10g -n 1\n")
-
-
-
 request <number> interactive: "interact -t 0{number}:00:00 -m 10g -n 1"
 request <number> g p u interactive: "interact -q gpu -t 0{number}:00:00 -m 100g -n 1"
 #interact -q gpu -t 6:00:00 -g 1 -m 60g
