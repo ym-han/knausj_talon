@@ -112,16 +112,76 @@ coder folder: "code -n ."
 # ==== CCLAW DSL dev related
 
 
+go use cases: 
+    insert("cd /Users/ymh/Documents/Git_repos/smucclaw/usecases")
+    key(enter)
+
+go test cases:
+    insert("cdl4")
+    key(enter)
+    insert("cd test/Testcases")
+    key(enter)
+
+go test spec:
+    insert("cdl4")
+    key(enter)
+    insert("cd test")
+    key(enter)
+
 go l four: 
     insert("cdl4")
     key(enter)
 
 path must sing: "test/examples/mustsing-latest.csv"
 
+path motor one: "test/Testcases/LogicProgram/motor-insurance-1/motor-insurance-1.csv"
+
+
+open transpiler notes: 
+    insert("code -n insurance_wiki/transpiler/natural4_to_le.md")
+    key(enter)
+
+
+docker logical english: 
+    insert("docker run -it -p 3050:3050  -e LOAD_KB=true -e SWISH_DAEMON_USER=root  --memory="300m" cclawdev/logicalenglish:main")
+
+# --------------
+
 l four run: 
     insert("cdl4")
     key(enter)
-    insert("stack run -- --workdir=workdir test/examples/")
+    insert("stack run -- --workdir=workdir ")
+
+l four motor insurance: 
+    insert("cdl4")
+    key(enter)
+    insert("stack run -- --workdir=workdir /Users/ymh/Documents/Git_repos/smucclaw/dsl/lib/haskell/natural4/test/Testcases/LogicProgram/motor-insurance-1/motor-insurance-1.csv")
+
+# -------------------------
+
+# -------------------------
+
+view native: 
+    insert("cdl4")
+    key(enter)
+    insert("code workdir/no-uuid/native/LATEST.hs")
+    key(enter)
+
+view org: 
+    insert("cdl4")
+    key(enter)
+    insert("code workdir/no-uuid/org/LATEST.org")
+    key(enter)
+
+view l e: 
+    insert("cdl4")
+    key(enter)
+    insert("code workdir/no-uuid/le/LATEST.le")
+    key(enter)
+
+stack build: 
+    insert("stack build")
+    key(enter)
 
 stack build install: "stack build; stack install"
 
@@ -145,7 +205,7 @@ load n l g spec:
     key(enter)
 
 stack repl: 
-    insert("stack ghci")
+    insert("stack repl")
     key(enter)
 
 # ==== CS300 related

@@ -10,6 +10,9 @@ pref talon binding: "Talon voice binding:\n"
 pref rango binding: "Talon voice binding -- Rango:\n"
 tag rango talon: "rango-talon"
 
+co authored joesy: "Co-authored-by: johsi-k <johsi.k@gmail.com>"
+#Co-authored-by: name <name@example.com>
+
 talon log path: "/Users/ymh/.talon/talon.log"
 sublime talon log: "subl /Users/ymh/.talon/talon.log"
 

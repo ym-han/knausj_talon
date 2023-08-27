@@ -39,8 +39,54 @@ module where:
 import text: "import Data.Char qualified as Char\nimport Data.Text qualified as T\n"
 import data map: "import qualified Data.Map as M"
 
-
+haddock block: "{- |\n -}"
+haddock line: "-- | "
 modulo: " mod "
+
+slash case: insert("\case")
+
+# ---------------------------- just for LE transpilation project
+print rules$: "prl "
+
+print indent: 
+    insert('pRules leTestcasesDir "indentation-databreach.csv"')
+    key(enter)
+
+print parent: 
+    insert('pRules leTestcasesDir "parentchild-without-period.csv"') 
+    key(enter)
+
+print simple sum:
+    insert('"pRules leTestcasesDir "simple-sum.csv"') 
+    key(enter)
+
+print multi:
+    insert('prl "rpnary-and.csv"')
+    key(enter)
+
+print and not:
+    insert('prl "and-not.csv"')
+    key(enter)
+
+print product:
+    insert('prl "product.csv"')
+    key(enter)
+
+print with numbers:
+    insert('prl "with-numbers.csv"')
+    key(enter)
+
+print max where:
+    insert('prl "is-max-where.csv"')
+    key(enter)
+
+
+
+load logical:
+    insert(":l LS.XPile.LogicalEnglish.LogicalEnglish")
+    key(enter)
+
+
 
 # ----- Ops -----------------
 op into: " -> "
