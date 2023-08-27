@@ -73,7 +73,7 @@ dup it: edit.selection_clone()
 
 # Select
 
-cork: edit.select_none()
+cork none: edit.select_none()
 
 grab up: edit.extend_up()
 grab down: edit.extend_down()
