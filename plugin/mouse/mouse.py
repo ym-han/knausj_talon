@@ -306,7 +306,7 @@ class UserActions:
                 setting_val == 2 and not actions.tracking.control_zoom_enabled()
             ) or (
                 setting_val == 1
-                and is_using_eye_tracker
+                # and is_using_eye_tracker
                 and not actions.tracking.control_zoom_enabled()
             )
             if should_click:
