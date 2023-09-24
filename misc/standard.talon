@@ -3,7 +3,7 @@ dot talon: ".talon"
 sync dpt: """dptrp1 sync "/Users/ymh/Dropbox/Sony Reader Sync" Document/sync"""
 
 pref mirdin: "Mirdin Software Design:"
-pref clingo: "Clingo: "
+#pref clingo: "Clingo: "
 pref haskell: "Haskell: "
 pref yak shaving: "Yak shaving: "
 pref talon binding: "Talon voice binding:\n"
@@ -59,7 +59,7 @@ nexxy:
   key(enter)
 
 alfred: key(cmd-space)
-vi mac: key(ctrl-alt-shift-v)
+veems: key(cmd-shift-space)
 
 
 # To do in the future: revert this to 'focus', and add a conditional: if already in list of running apps, just focus on it; if not, launch it.
