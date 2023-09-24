@@ -1,6 +1,6 @@
 mode: user.slow
 -
 settings():
-    speech.timeout = 0.3
+    speech.timeout = 0.5
 
 fast mode: mode.disable("user.slow")
