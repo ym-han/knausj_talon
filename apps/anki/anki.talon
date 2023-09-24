@@ -12,12 +12,12 @@ show history: key(cmd-shift-h)
 
 paste haskell: 
   key(alt-s)
-  sleep(20ms)
+  sleep(30ms)
   insert("select")
   key(enter)
-  sleep(20ms)
+  sleep(40ms)
   insert("has")
-  sleep(20ms)
+  sleep(30ms)
   key(enter)
 
 paste python: 
@@ -25,6 +25,21 @@ paste python:
   insert("py")
   key(enter)
 
+
+make code: 
+  key(alt-s)
+  sleep(20ms)
+  insert("code")
+  sleep(30ms)
+  key(enter)
+
+
+paste code: 
+  key(alt-s)
+  sleep(20ms)
+  insert("code")
+  sleep(30ms)
+  key(enter)
 
 paste j s: 
   key(alt-s)
@@ -52,6 +67,7 @@ jay evaluate: "Javascript: What does the following evaluate to?\n\n"
 jay output: "Javascript: What will the following code output?\n\n"
 pref launch school: "Launch School:  "
 pref j s: "Javascript:  "
+pref regex: "Regex: "
 
 one twenty tag: "JS120:  "
 
