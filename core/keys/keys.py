@@ -149,6 +149,8 @@ punctuation_words = {
     # Dragon. Possibly it has been fixed by later improvements to talon? -rntz
     "`": "`",
     ",": ",",  # <== these things
+    "starry": "*",
+
     "back tick": "`",
     # "grave": "`",
     "comma": ",",
@@ -160,13 +162,18 @@ punctuation_words = {
     "colon": ":",
     "for slash": "/",
     "questo": "?",
-    "exclamation mark": "!",
+    "exclaimation": "!",
     # "asterisk": "*",
     # "hash sign": "#",
     # "number sign": "#",
     "sym percent": "%",
     "at sign": "@",
     "sym amp": "&",
+
+    "sym lambda": "λ",
+    "sym gamma": "Γ",
+    "sym member of": "∈",
+    "sym small gamma": "γ"
 }
 symbol_key_words = {
     "point": ".",
@@ -190,13 +197,13 @@ symbol_key_words = {
     "sym angle": "<",
     "smaller than": "<",
     "greater than": ">",
+
     
     "sym rangle": ">",
-    "starry": "*",
     "pound": "#",
     # "percent": "%",
     # "caret": "^",
-    # "amper": "&",
+    
     "sym pipe": "|",
     "dubquote": '"',
     # Currencies
