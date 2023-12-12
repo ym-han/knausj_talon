@@ -41,13 +41,23 @@ paste code:
   sleep(30ms)
   key(enter)
 
+
+(paste jay | jay paste): 
+  key(alt-s)
+  sleep(20ms)
+  key(down:2)
+  sleep(20ms)
+  key(right)
+  insert("javascr")
+  key(enter)
+
 paste j s: 
   key(alt-s)
   sleep(20ms)
   key(down:2)
   sleep(20ms)
   key(right)
-  insert("j")
+  insert("javascr")
   key(enter)
 
 paste julia: 
@@ -66,7 +76,7 @@ haskell evaluate: "Haskell: What does the following evaluate to?\n\n"
 jay evaluate: "Javascript: What does the following evaluate to?\n\n"
 jay output: "Javascript: What will the following code output?\n\n"
 pref launch school: "Launch School:  "
-pref j s: "Javascript:  "
+(pref j s | pref jay): "Javascript:  "
 pref regex: "Regex: "
 
 one twenty tag: "JS120:  "
