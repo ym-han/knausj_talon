@@ -45,6 +45,9 @@ modulo: " mod "
 
 slash case: insert("\case")
 
+and then: "& "
+
+
 # ---------------------------- just for LE transpilation project
 print rules$: "prl "
 
@@ -152,3 +155,7 @@ state reader tee: "ReaderT"
 state return: "return "
 
 state pure: "pure "
+
+state set of: "setOf "
+
+state folded: "folded "

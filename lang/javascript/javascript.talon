@@ -119,10 +119,10 @@ state output: "OUTPUT: "
 state examples: "EGS: "
 state algo: "ALGO: \n"
 
-#dot for each: ".forEach("
+dot for each: ".forEach("
 
-#dot split: ".split("
-#dot split to chars: ".split('')"
+dot split: ".split("
+dot split to chars: ".split('')"
 
 dot to upper case: ".toUpperCase()"
 dot to lower case: ".toLowerCase()"
@@ -145,6 +145,11 @@ dot concat: ".concat("
 
 dot push: ".push("
 dot pop: ".pop()"
+dot splice: ".splice("
+dot slicey: ".slice("
+dot slice reverse: ".slice().reverse()"
+dot reverse: ".reverse()"
+
 
 run test: "node test.js\n"
 
@@ -166,12 +171,14 @@ for pair of object entries:
     insert("""for (const kvPair of Object.entries()) {\n""")
     key(left:5)
 
+object is: "Object.is("
 object keys: "Object.keys("
 object keys includes: 
     insert("Object.keys().includes")
     key(left:10)
 
 object freeze: "Object.freeze("
+object create: "Object.create("
 object entries: "Object.entries("
 object values: "Object.values("
 
@@ -183,3 +190,12 @@ end block comment: "*/"
 interp string: "${"
 
 run it: key(cmd-enter)
+
+
+install e s lint: "npm install eslint@7.12.1 eslint-cli babel-eslint --save-dev"
+# Note that you must install these 3 packages for every project where you need to use ESLint
+# can ignore the warning about babel-eslint no longer receiving updates.
+
+check e s lint version: "npx eslint -v"
+#e lint file: "npx eslint "
+#e lint fix: "eslint --fix "
