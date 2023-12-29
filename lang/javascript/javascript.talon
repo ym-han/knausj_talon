@@ -24,10 +24,10 @@ settings():
     user.code_private_variable_formatter = "PRIVATE_CAMEL_CASE"
     user.code_protected_variable_formatter = "PRIVATE_CAMEL_CASE"
     user.code_public_variable_formatter = "PRIVATE_CAMEL_CASE"
-
-(op | is) strict equal: " === "
-(op | is) strict not equal: " !== "
-op null else: " ?? "
+ 
+(op | is) equals: " === "
+(op | is) not equal: " !== "
+op nullish: " ?? "
 
 new func: 
     insert("function () {\n")
@@ -56,7 +56,8 @@ math power: "Math.pow("
 math sign: "Math.sign("
 math abs: "Math.abs("
 
-
+state this: "this"
+state class: "class "
 state const: "const "
 state let: "let "
 state var: "var "
@@ -172,6 +173,7 @@ for pair of object entries:
     key(left:5)
 
 object is: "Object.is("
+object assign: "Object.assign("
 object keys: "Object.keys("
 object keys includes: 
     insert("Object.keys().includes")
@@ -187,15 +189,15 @@ begin block comment: "/*"
 end block comment: "*/"
 
 
-interp string: "${"
+interpol: "${"
 
 run it: key(cmd-enter)
 
 
-install e s lint: "npm install eslint@7.12.1 eslint-cli babel-eslint --save-dev"
+#lint install: "npm install eslint@7.12.1 eslint-cli babel-eslint --save-dev"
 # Note that you must install these 3 packages for every project where you need to use ESLint
 # can ignore the warning about babel-eslint no longer receiving updates.
 
-check e s lint version: "npx eslint -v"
+#lint version: "npx eslint -v"
 #e lint file: "npx eslint "
 #e lint fix: "eslint --fix "
