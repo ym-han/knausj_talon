@@ -320,7 +320,7 @@ join lines: user.vscode("editor.action.joinLines")
 full screen: user.vscode("workbench.action.toggleFullScreen")
 
 curse undo: user.vscode("cursorUndo")
-curse toggle: user.vscode("cursorless.toggleDecorations")
+hints tog: user.vscode("cursorless.toggleDecorations")
 
 select word: user.vscode("editor.action.addSelectionToNextFindMatch")
 skip word: user.vscode("editor.action.moveSelectionToNextFindMatch")
