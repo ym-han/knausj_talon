@@ -6,7 +6,9 @@ add it: key(cmd-enter)
 
 new card: key(a)
 
-bad card: key(1)
+was bad: key(1)
+was good: key(3)
+was easy: key(4)
 
 show history: key(cmd-shift-h)
 
@@ -40,6 +42,16 @@ paste code:
   insert("code")
   sleep(30ms)
   key(enter)
+
+paste c s s: 
+  key(alt-s)
+  sleep(20ms)
+  key(down:2)
+  sleep(20ms)
+  key(right)
+  insert("c s s")
+  key(enter)
+
 
 
 (paste jay | jay paste): 
@@ -75,10 +87,12 @@ paste custom lang: key(alt-s)
 haskell evaluate: "Haskell: What does the following evaluate to?\n\n"
 jay evaluate: "Javascript: What does the following evaluate to?\n\n"
 jay output: "Javascript: What will the following code output?\n\n"
+
 pref launch school: "Launch School:  "
 (pref j s | pref jay): "Javascript:  "
 pref regex: "Regex: "
 
-one twenty tag: "JS120:  "
+pref one thirty: "JS130:  "
+pref c s s: "CSS: "
 
 state true false: "True/False:  "
