@@ -46,7 +46,8 @@ lisa all: user.terminal_list_all_directories()
 
 cd [dir] [<user.text>]: user.terminal_change_directory(text or "")
 cd root: user.terminal_change_directory_root()
-cd up: "cd..\n"
+cd up: "cd ..\n"
+cd back: "cd -\n"
 #user.terminal_change_directory("..")
 
 go <user.system_path>: insert('cd "{system_path}"\n')
@@ -132,6 +133,8 @@ go l four:
     insert("cdl4")
     key(enter)
 
+check most recent testcase: insert("l4rectest; subl workdir/no-uuid/le/LATEST.le")
+
 path must sing: "test/examples/mustsing-latest.csv"
 
 path motor one: "test/Testcases/LogicProgram/motor-insurance-1/motor-insurance-1.csv"
@@ -180,19 +183,33 @@ view l e:
     key(enter)
 
 stack build: 
-    insert("stack build")
+    insert("sbf")
     key(enter)
+
+stack exec: insert("stack exec natural4-exe -- --workdir=workdir")
+
 
 stack build install: "stack build; stack install"
 
 stack test: 
-    insert("stack test")
+    insert("stf")
     key(enter)
 
 stack haddock:
     insert("stack haddock")
     key(enter)
-
+stack hoogle gen: 
+    insert("stack hoogle -- generate --local")
+    key(enter)
+stack hoogle serve: 
+    insert("stack hoogle -- server --local --port=8080")
+    key(enter)
+stack hoogle gen serve:
+    insert("stack hoogle -- generate --local")
+    key(enter)
+    insert("stack hoogle -- server --local --port=8080")
+    key(enter)
+    
 stack targets: insert("stack ide targets")
 
 repl test: 
