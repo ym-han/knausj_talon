@@ -1,16 +1,22 @@
 new line: "\n"
-double dash: "--"
+double dash: "--"   
+triple dash: "--"     
 triple quote: "'''"
 (triple grave | triple back tick | gravy): insert("```")
 (dot dot | dotdot): ".."
 ellipses: "..."
+semi space: "; "
+
+coalgap: ": "
 spamma: ", "
+
 sym arrow: "->"
 sym dub arrow: "=>"
 
 carriage return: "\\r"
 line feed: "\\r\\n"
 
+### empty <...>
 empty round: "()"
 empty square: "[]"
 empty curly: "{}"
@@ -22,26 +28,29 @@ empty escaped twin: "\\'\\'"
 empty escaped round: "\\(\\)"
 empty escaped curly: "\\{{\\}}"
 
-(round | inside parens): user.insert_between("(", ")")
-square: user.insert_between("[", "]")
-(curly | braces): user.insert_between("{", "}")
-diamond: user.insert_between("<", ">")
-quad: user.insert_between('"', '"')
-twin: user.insert_between("'", "'")
-(back | ber) tick: user.insert_between("`", "`")
-
-tween <user.symbol_key>: user.insert_between("{symbol_key}", "{symbol_key}")
-
+### inside <...>
+inside square: user.insert_between("[", "]")
 inside percent: user.insert_between("%", "%")
 inside (quotes | string): user.insert_between("'", "'")
 inside (double quotes | dub quotes): user.insert_between('"', '"')
 inside (graves | ber ticks): user.insert_between("`", "`")
+inside (curly | braces): user.insert_between("{", "}")
+
+# Do I really want these exceptions?
+(round | inside parens): user.insert_between("(", ")")
+diamond: user.insert_between("<", ">")
+quad: user.insert_between('"', '"')
+twin: user.insert_between("'", "'")
+
+tween <user.symbol_key>: user.insert_between("{symbol_key}", "{symbol_key}")
+
 
 escaped quad: user.insert_between('\\"', '\\"')
 escaped twin: user.insert_between("\\'", "\\'")
 escaped round: user.insert_between("\\(", "\\)")
 escaped curly: user.insert_between("\\{{", "\\}}")
 
+### <...> that
 angle that:
     text = edit.selected_text()
     user.paste("<{text}>")
@@ -66,6 +75,10 @@ twin that:
 (ber tick | back tick | skis) that:
     text = edit.selected_text()
     user.paste("`{text}`")
+big skis that:
+    text = edit.selected_text()
+    user.paste("```\n{text}```")
+
 
 big round:
     insert("()")
@@ -97,3 +110,22 @@ end gap:
     edit.line_end()
     key(space)
     
+
+# Legacy: not sure if need these
+arg wrap: 
+  edit.line_start()
+  insert("(")
+  edit.line_end()
+  insert(")")
+
+(skis | ber tick) wrap:
+  edit.line_start()
+  insert("`")
+  edit.line_end()
+  insert("`")
+
+brace wrap: 
+  edit.line_start()
+  insert("{")
+  edit.line_end()
+  insert("}")      
