@@ -34,8 +34,6 @@ new func:
     key(left:5)
 
 
-semi: ";"
-
 
 
 begin code: "```javascript\n"
@@ -56,6 +54,7 @@ math power: "Math.pow("
 math sign: "Math.sign("
 math abs: "Math.abs("
 
+state js: "javascript"
 state this: "this"
 state class: "class "
 state const: "const "
@@ -201,3 +200,7 @@ run it: key(cmd-enter)
 #lint version: "npx eslint -v"
 #e lint file: "npx eslint "
 #e lint fix: "eslint --fix "
+
+pragma use strict: insert('"use strict";\n')
+
+script module: insert('<script lang="ts" context="module">')
