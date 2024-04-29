@@ -1,4 +1,11 @@
-semi space: "; "
+wait: sleep(400ms)
+
+# homerow
+^mouser [<user.text>]:
+    user.homerow_search()
+    sleep(50ms)
+    insert(text or "")
+
 dot talon: ".talon"
 sync dpt: """dptrp1 sync "/Users/ymh/Dropbox/Sony Reader Sync" Document/sync"""
 
@@ -30,29 +37,9 @@ paste match: edit.paste_match_style()
 
 screen area: key(cmd-ctrl-shift-4)
 
-spamma: ", "
-coalgap: ": "
 
-arg wrap: 
-  edit.line_start()
-  insert("(")
-  edit.line_end()
-  insert(")")
-
-(skis | ber tick) wrap:
-  edit.line_start()
-  insert("`")
-  edit.line_end()
-  insert("`")
-
-brace wrap: 
-  edit.line_start()
-  insert("{")
-  edit.line_end()
-  insert("}")      
-
-padder: 
-  insert("  ") 
+padder:
+  insert("  ")
   key(left)
 nexxy:
   edit.line_end()
