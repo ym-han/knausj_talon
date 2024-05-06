@@ -16,9 +16,9 @@ action block: user.insert_between("action(", "):")
 setting block: insert("settings():\n\t")
 setting {user.talon_settings}: user.paste("{talon_settings} = ")
 #context requirements
-win require: insert("os: windows\n")
+#win require: insert("os: windows\n")
 mac require: insert("os: mac\n")
-linux require: insert("os: linux\n")
+#linux require: insert("os: linux\n")
 title require: insert("win.title: ")
 application [require] [{user.talon_apps}]:
     app = talon_apps or ""
