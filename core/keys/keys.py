@@ -12,7 +12,7 @@ def setup_default_alphabet():
     initial_default_alphabet_dict = dict(
         zip(initial_default_alphabet, initial_letters_string)
     )
-    
+
     return initial_default_alphabet_dict
 
 
@@ -130,7 +130,7 @@ def letters(m) -> str:
 ctx = Context()
 modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
-    # "alt": "alt",  
+    # "alt": "alt",
     'alter': 'alt',
     "control": "ctrl",  #'troll':   'ctrl',
     "shift": "shift",  #'sky':     'shift',
@@ -158,16 +158,16 @@ punctuation_words = {
     #"coma": ",",
     "period": ".",
     # "full stop": ".",
-    "semicolon": ";",
+    "semi": ";",
     "colon": ":",
     "for slash": "/",
     "questo": "?",
     "exclaimation": "!",
-    # "asterisk": "*",
-    # "hash sign": "#",
+    "sym hash": "#",
     # "number sign": "#",
-    "sym percent": "%",
     "at sign": "@",
+
+    "sym percent": "%",
     "sym amp": "&",
 
     "sym lambda": "λ",
@@ -176,16 +176,14 @@ punctuation_words = {
     "sym small gamma": "γ"
 }
 symbol_key_words = {
-    "point": ".",
-    "sym quote": "'",
-    "l square": "[",
-    # "rack": "]",
+    # "point": ".",
+    "square": "[",
+    "rack": "]",
     "r square": "]",
     "backslash": "\\",
     "minus": "-",
     "dash": "-",
     "equals": "=",
-    "sym plus": "+",
     # "grave": "`",
     "tilde": "~",
     "bang": "!",
@@ -194,38 +192,42 @@ symbol_key_words = {
     "reper": ")",
     "bracey": "{",
     "R brace": "}",
+
+    "sym quote": "'",
+    "sym plus": "+",
     "sym angle": "<",
+    "sym rangle": ">",
+
     "smaller than": "<",
     "greater than": ">",
 
-    
-    "sym rangle": ">",
-    "pound": "#",
+
+    # "pound": "#",
     # "percent": "%",
-    # "caret": "^",
-    
+    "sym caret": "^",
+
     "sym pipe": "|",
     "dubquote": '"',
     # Currencies
     "dollar sign": "$",
 }
- 
- 
+
+
 only_for_saran = {
     "big arrow":   "=>",
     "arrow":       "->",
     "not equal":   "!=",
     "pipe":        "|",
     "dollar":      "$",
-    "em dash":     "---", 
+    "em dash":     "---",
     "starry":      "*"
 }
 
- 
+
 # TO DO: Ok I think I should make this a formatter insteadd
 saranable_key_words = {binding: f" {symbol} " for binding, symbol in symbol_key_words.items()}
 saranable_key_words.update( {binding: f" {symbol} " for binding, symbol in only_for_saran.items()})
- 
+
 # make punctuation words also included in {user.symbol_keys}
 symbol_key_words.update(punctuation_words)
 ctx.lists["self.punctuation"] = punctuation_words
@@ -251,12 +253,12 @@ simple_keys = [
     "pageup",
     "space",
     "tab it",
-]   
-            
+]
+
 alternate_keys = {
     "wipe": "backspace",
     #"delete": "backspace",
-    'junk': 'backspace',
+    # 'junk': 'backspace',
     "taber": "tab",
     "forward delete": "delete",
     "page up": "pageup",
