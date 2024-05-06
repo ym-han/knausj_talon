@@ -9,12 +9,14 @@ tag(): user.splits
 tag(): user.tabs
 tag(): terminal
 
+# NOTES
+# User settings: application_support / "Code - Insiders/User/settings.json",
 
 # inspiration: https://github.com/pokey/pokey_talon/blob/7b0f05c07ac651655546c46b071fa3cdf77bc832/apps/vscode/vscode.talon
 
 
-application_support / "Code - Insiders/User/settings.json",
-# hmm, not sure why this isn't working?
+cross it: user.split_next()
+# TODO not sure why this isn't working?
 
 window reload: user.vscode("workbench.action.reloadWindow")
 window close: user.vscode("workbench.action.closeWindow")
