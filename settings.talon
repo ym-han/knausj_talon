@@ -1,6 +1,6 @@
 -
 settings():
-    speech.timeout = 0.26
+    speech.timeout = 0.3
     speech.record_all = 1
     # Adjust the scale of the imgui to my liking
     imgui.scale = 1.3
@@ -15,7 +15,7 @@ settings():
 
     # Set the max number of contexts display per page in help
     user.help_max_contexts_per_page = 30
-    
+
     # The default amount used when scrolling continuously
     user.mouse_continuous_scroll_amount = 110
     user.mouse_continuous_scroll_amount = 80
