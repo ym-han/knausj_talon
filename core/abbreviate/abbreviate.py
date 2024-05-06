@@ -445,18 +445,19 @@ abbreviations = {
     "work in progress": "wip",
 }
 
+def remove_whitespace(mapping): return {k: v.strip() for (k, v) in mapping.items()}
 # This variable is also considered exported for the create_spoken_forms module
-abbreviations_list = get_list_from_csv(
+abbreviations_list = remove_whitespace(get_list_from_csv(
     "abbreviations.csv",
     headers=("Abbreviation", "Spoken Form"),
     default=abbreviations,
-)
+))
 
 # Allows the abbreviated/short form to be used as spoken phrase. eg "brief app" -> app
-abbreviations_list_with_values = {
+abbreviations_list_with_values = remove_whitespace({
     **{v: v for v in abbreviations_list.values()},
     **abbreviations_list,
-}
+})
 
 ctx = Context()
 ctx.lists["user.abbreviation"] = abbreviations_list_with_values
