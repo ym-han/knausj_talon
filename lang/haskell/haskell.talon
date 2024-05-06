@@ -31,7 +31,7 @@ pragma stand alone deriving: "{{-# LANGUAGE StandaloneDeriving #-}}"
 set type applications: ":set -XTypeApplications\n"
 set print for all: ":set -fprint-explicit-foralls\n"
 
-module where: 
+module where:
     insert("module  where")
     key(left:6)
 
@@ -40,7 +40,7 @@ import text: "import Data.Char qualified as Char\nimport Data.Text qualified as 
 import data map: "import qualified Data.Map as M"
 
 haddock block: "{- |\n -}"
-haddock line: "-- | "
+haddock comment: "-- | "
 modulo: " mod "
 
 slash case: insert("\case")
@@ -51,16 +51,16 @@ and then: "& "
 # ---------------------------- just for LE transpilation project
 print rules$: "prl "
 
-print indent: 
+print indent:
     insert('pRules leTestcasesDir "indentation-databreach.csv"')
     key(enter)
 
-print parent: 
-    insert('pRules leTestcasesDir "parentchild-without-period.csv"') 
+print parent:
+    insert('pRules leTestcasesDir "parentchild-without-period.csv"')
     key(enter)
 
 print simple sum:
-    insert('"pRules leTestcasesDir "simple-sum.csv"') 
+    insert('"pRules leTestcasesDir "simple-sum.csv"')
     key(enter)
 
 print multi:
@@ -144,7 +144,7 @@ state data: "data "
 
 state first: "fst "
 state second: "snd "
-put string line: "putStrLn " 
+put string line: "putStrLn "
 
 state lift: "lift "
 
