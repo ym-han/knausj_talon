@@ -286,6 +286,12 @@ edit cabal in sublime: "subl *.cabal"
 
 run e s lint: "npx eslint "
 
+pee build: 
+  insert("pnpm run build")
+  key(enter)
+pee run: 
+  insert("pnpm run dev -- --open")
+  key(enter)
 
 # === ENVIRONMENTS
 make virtual environment: "virtualenv"
