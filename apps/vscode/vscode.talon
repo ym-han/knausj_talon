@@ -13,7 +13,7 @@ tag(): terminal
 # inspiration: https://github.com/pokey/pokey_talon/blob/7b0f05c07ac651655546c46b071fa3cdf77bc832/apps/vscode/vscode.talon
 
 
-cross it: user.split_next()
+application_support / "Code - Insiders/User/settings.json",
 # hmm, not sure why this isn't working?
 
 window reload: user.vscode("workbench.action.reloadWindow")
@@ -59,7 +59,7 @@ panel control: user.vscode("workbench.panel.repl.view.focus")
 panel output: user.vscode("workbench.panel.output.focus")
 panel problems: user.vscode("workbench.panel.markers.view.focus")
 panel toggle: user.vscode("workbench.action.togglePanel")
-now term: 
+now term:
     user.vscode("workbench.action.terminal.focus")
     sleep(200ms)
 now editor: user.vscode("workbench.action.focusActiveEditorGroup")
@@ -69,7 +69,7 @@ move panel left: key(cmd-alt-ctrl-left)
 
 
 # Settings
-show settings:  
+show settings:
     sleep(50ms)
     user.vscode("workbench.action.openGlobalSettings")
 show settings json: user.vscode("workbench.action.openSettingsJson")
@@ -149,7 +149,7 @@ imports fix: user.vscode("editor.action.organizeImports")
 problem next: user.vscode("editor.action.marker.nextInFiles")
 problem prev: user.vscode("editor.action.marker.prevInFiles")
 problem fix: user.vscode("problems.action.showQuickFixes")
-rename that: user.vscode("editor.action.rename") 
+rename that: user.vscode("editor.action.rename")
 # this is rename symbol
 refactor that: user.vscode("editor.action.refactor")
 trim whitespace: user.vscode("editor.action.trimTrailingWhitespace")
@@ -334,28 +334,28 @@ cell next: user.vscode("jupyter.gotoNextCellInFile")
 cell prev: user.vscode("jupyter.gotoPrevCellInFile")
 cell run above: user.vscode("jupyter.runallcellsabove.palette")
 cell run: user.vscode("jupyter.runcurrentcell")
-cell new: 
+cell new:
     key(esc)
-    key(b) 
-#user.vscode("jupyter.insertCellBellowPosition") 
-cell down: user.vscode("jupyter.moveCellsDown") 
-cell up: user.vscode("jupyter.moveCellsUp") 
+    key(b)
+#user.vscode("jupyter.insertCellBellowPosition")
+cell down: user.vscode("jupyter.moveCellsDown")
+cell up: user.vscode("jupyter.moveCellsUp")
 
 junk cells: user.vscode("jupyter.deleteCells")
-junk cell: 
+junk cell:
     key(esc)
     key(d:2)
 
-jupiter save to pdf: user.vscode("jupyter.exportToPDF") 
-jupiter variables: user.vscode("jupyter.openVariableView") 
+jupiter save to pdf: user.vscode("jupyter.exportToPDF")
+jupiter variables: user.vscode("jupyter.openVariableView")
 
 jupiter run all cells: user.vscode("jupyter.runallcells")
 
-cell markdown: 
+cell markdown:
     key(esc)
     key(m)
 #user.vscode("jupyter.changeCellToMarkdown")
-cell code: 
+cell code:
     key(esc)
     key(y)
 #user.vscode("jupyter.changeCellToCode")
