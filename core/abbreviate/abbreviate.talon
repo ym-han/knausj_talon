@@ -1,2 +1,2 @@
 -
-(abbreviate | abreviate | brief) {user.abbreviation}: "{abbreviation}"
+(abbrev | abreviate | brief) {user.abbreviation}: "{abbreviation}"
