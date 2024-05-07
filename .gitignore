@@ -6,3 +6,4 @@ __pycache__
 /settings/system_paths.csv
 .vscode/settings.json
 .DS_Store
+private.talon
