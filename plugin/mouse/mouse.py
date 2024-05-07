@@ -110,18 +110,20 @@ def gui_wheel(gui: imgui.GUI):
 def mouse_scroll_continuous(direction: str, factor: float):
     """Returns closure for either scrolling up or down"""
 
-    abs_Δ = setting_mouse_continuous_scroll_amount.get() * factor
+    abs_Δ = settings.get("user.mouse_continuous_scroll_amount") * factor
     signed_Δ = abs_Δ * (1 if direction == "down" else -1)
 
+    # YM-TODO: Does it really make sense to return a closure in this way?
     def inner():
         """Inner function to be returned"""
-        global continuous_scoll_mode
-        continuous_scoll_mode = f"scroll {direction} continuous; {factor}x"
+        global continuous_scroll_mode
+        continuous_scroll_mode = f"scroll {direction} continuous; {factor}x"
         mouse_scroll(signed_Δ)()
 
         if scroll_job is None:
             start_scroll()
-        if setting_mouse_hide_mouse_gui.get() == 0:
+
+        if not settings.get("user.mouse_hide_mouse_gui"):
             gui_wheel.show()
 
     return inner
@@ -181,7 +183,6 @@ class Actions:
         """Scrolls down"""
         mouse_scroll(amount * settings.get("user.mouse_wheel_down_amount"))()
 
-
     def mouse_scroll_down_continuous(factor: float = 1.0):
         """Scrolls down continuously"""
         mouse_scroll_continuous("down", factor)()
@@ -193,8 +194,8 @@ class Actions:
 
     # def mouse_scroll_down_continuous():
     #     """Scrolls down continuously"""
-    #     global continuous_scoll_mode
-    #     continuous_scoll_mode = "scroll down continuous"
+    #     global continuous_scroll_mode
+    #     continuous_scroll_mode = "scroll down continuous"
     #     mouse_scroll(setting_mouse_continuous_scroll_amount.get())()
 
     #     if scroll_job is None:
@@ -209,8 +210,8 @@ class Actions:
 
     # def mouse_scroll_up_continuous():
     #     """Scrolls up continuously"""
-    #     global continuous_scoll_mode
-    #     continuous_scoll_mode = "scroll up continuous"
+    #     global continuous_scroll_mode
+    #     continuous_scroll_mode = "scroll up continuous"
     #     mouse_scroll(-setting_mouse_continuous_scroll_amount.get())()
 
     #     if scroll_job is None:
@@ -349,7 +350,7 @@ class UserActions:
 def mouse_scroll(amount):
     def scroll():
         global scroll_amount
-        if continuous_scroll_mode:
+        if continuous_scroll_mode != "":
             if (scroll_amount >= 0) == (amount >= 0):
                 scroll_amount += amount
             else:
@@ -361,7 +362,7 @@ def mouse_scroll(amount):
 
 def scroll_continuous_helper():
     global scroll_amount
-    # print("scroll_continuous_helper")
+    print("scroll_continuous_helper")
     if scroll_amount and (eye_zoom_mouse.zoom_mouse.state == eye_zoom_mouse.STATE_IDLE):
         actions.mouse_scroll(by_lines=False, y=int(scroll_amount / 10))
 
