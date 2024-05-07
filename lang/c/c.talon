@@ -1,7 +1,8 @@
-tag: user.c
+code.language: c
 -
 tag(): user.code_imperative
 
+tag(): user.code_block_c_like
 tag(): user.code_comment_line
 tag(): user.code_comment_block_c_like
 tag(): user.code_data_bool
@@ -23,8 +24,6 @@ settings():
     user.code_private_variable_formatter = "SNAKE_CASE"
     user.code_protected_variable_formatter = "SNAKE_CASE"
     user.code_public_variable_formatter = "SNAKE_CASE"
-    # whether or not to use uint_8 style datatypes
-    #    user.use_stdint_datatypes = 1
 
 
 
@@ -82,9 +81,9 @@ state else branch: "} else {"
 
 #control flow
 #best used with a push like command
-#the below example may not work in editors that automatically add the closing bracket
+#the below example may not work in editors that automatically add the closing brace
 #if so uncomment the two lines and comment out the rest accordingly
-push brackets:
+push braces:
     edit.line_end()
     #insert("{")
     #key(enter)

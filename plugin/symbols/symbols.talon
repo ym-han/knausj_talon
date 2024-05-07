@@ -29,7 +29,7 @@ empty escaped round: "\\(\\)"
 empty escaped curly: "\\{{\\}}"
 
 ### inside <...>
-inside square: user.insert_between("[", "]")
+inside squares: user.insert_between("[", "]")
 inside percent: user.insert_between("%", "%")
 inside (quotes | string): user.insert_between("'", "'")
 inside (double quotes | dub quotes): user.insert_between('"', '"')
@@ -54,7 +54,7 @@ escaped curly: user.insert_between("\\{{", "\\}}")
 angle that:
     text = edit.selected_text()
     user.paste("<{text}>")
-(square | square bracket) that:
+(square | bracket | square bracket) that:
     text = edit.selected_text()
     user.paste("[{text}]")
 (curly | brace) that:
