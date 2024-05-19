@@ -16,15 +16,20 @@ tag(): user.homebrew
 tag(): user.tabs
 tag(): user.file_manager
 
-suspend:
-    key(ctrl-z)
-resume:
-    insert("fg")
-    key(enter)
+# suspend:
+#     key(ctrl-z)
+# resume:
+#     insert("fg")
+#     key(enter)
 
-search all [<user.text>]:
+focus input:
+    key(cmd-l)
+
+search hist [<user.text>]:
     key(ctrl-r)
     insert(text or "")
+
+ask ai: key(ctrl-.)
 
 please [<user.text>]:
     key(cmd-p)
@@ -35,6 +40,10 @@ block up:
 
 block down:
     key(cmd-down)
+
+block bookmark:
+    key(cmd-b)
+
 
 copy command:
     key(cmd-shift-c)
